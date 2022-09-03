@@ -5,15 +5,9 @@ helpFunction()
 {
    echo "Usage: Creating .nes files [ -d Directory ] [ -C ConfigWithPath ] [ -c Config ] [ -o OutputFile ] [ -r ] [ -a ] [ -h ] 
 
--d Directory			Directory of .asm files
--c ConfigNES			Configuration file name, can be specified without .cfg.
--C ConfigWithPath		Configuration file name SPECIFIED WITH PATH. 
--o OutputFile			.nes output file name, can be specified without .nes
--r				remove .o files in Directory
--a				show runned commands (ca65, ld65)
--h				help
+This script creates an \".o\" output file, compiling a whole NES game project
 
-Full desciption:
+Usage:
 -d		With these parameter you specify a directory, in which all the source files are located 
 		( Usually it is a /src folder ). 
 			E.g: -d some_project/src		OR		-d some_project/src/
@@ -21,6 +15,12 @@ Full desciption:
 -c		Here you cpecify a configuration file for NES ( Usually nes.cfg )
 		Uses directory, that is one layer above -d Directory that was specified 
 			E.g: -c example.cfg				OR		-c example
+		!!! 
+		NOTE:
+		IF you are using -c key, you have to pay atteintion, that the script will search for a specified .cfg gile in the directory, that is one layer above the last one, specified with -d key
+		Example: -f some_dir/nes_projects/example_project/src -c example.cfg
+			In this case the script will be searched in the \"example_project folder\"
+		!!!
 -C		Here is a full path to a configuration file, using if .cfg file is specified elswhere
 			E.g: -C path/to/file/example.cfg
 -o		a name of output .nes file, can be specified both with ot without path, depends on needs
