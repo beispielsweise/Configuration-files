@@ -119,12 +119,12 @@ fi
 alias fucking="sudo"
 alias please="sudo"
 alias home="cd ~"
-alias nesdir="cd ~/programing/NES/"
-alias cdir="cd ~/programing/c"
+alias nesdir="cd ~/programing/nes/"
+# alias cdir="cd ~/programing/c"
 alias ncdir="cd ~/.config/nvim"
 alias ncf="nvim ~/.config/nvim/init.vim"
 alias brc="nvim ~/.bashrc"
-alias acf="nvim ~/.config/alacritty/alacritty.yml"
+# alias acf="nvim ~/.config/alacritty/alacritty.yml"
 alias nv="nvim"
 alias vg="valgrind"
 alias vgall="valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes"
@@ -142,4 +142,3 @@ alias showtime="while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tp
 
 
 # -----------------------------!!!!!!!!!!!!!! -----------------------------
-
