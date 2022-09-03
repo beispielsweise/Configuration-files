@@ -14,7 +14,7 @@ set number
 :colorscheme jellybeans
 "------------------- PLUGINS ----------------------"
 
-call plug#begin()
+call plug#begin() " .local/share/nvim/plugged
 
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
@@ -96,12 +96,12 @@ nnoremap <a-]> :split<CR>
 
 "--------------------- COC.NVIM STUFF -----------------------"
 
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1] =~ '\s'
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
-	\ pumvisible() ? "\<C-n>" :
-	\ <SID>check_back_space() ? "\<Tab>" :
-	\ kite#completion#autocomplete()
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
