@@ -63,7 +63,6 @@ fi
 outputFileNameCut=${outputFileName%.nes}
 if [ ${#outputFileName} == ${#outputFileNameCut} ] ; then
 	outputFileName=$outputFileName.nes
-	echo $outputFileName
 fi
 
 
