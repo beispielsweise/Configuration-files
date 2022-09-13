@@ -33,7 +33,7 @@ install_files () {
 			echo -e "[-]${RED} something went wrong while copying .gitconfig${NC}"
 		fi
 
-		# init.vim
+		# init.vim && coc-settings.json
 		if [[ ! -d "~/.config/nvim/" && "~/.config/nvim/" =~ ^\. ]]
 		then
 			echo -e "[-]${RED} No directory path \"~/.config/nvim\", which is essential for NEOVIM configuration\n
@@ -45,6 +45,13 @@ install_files () {
 				echo -e "[+]${LBLUE} init.vim succesfully copied${NC}"
 			else
 				echo -e "[-]${RED} something went wrong while copying init.vim${NC}"
+			fi
+			cp config-files/coc-settings.json ~/.config/nvim/
+			if [ $? == 0 ] 
+			then
+				echo -e "[+]${LBLUE} coc-settings.json succesfully copied${NC}"
+			else
+				echo -e "[-]${RED} something went wrong while copying coc-settings.json${NC}"
 			fi
 		fi
 
@@ -114,7 +121,7 @@ clear
 case $ch in
 	0) 
 	install_files
-	echo -e "\n${LBLUE}All files installed.\n 
+	echo -e "\n${LBLUE}All files are installed.\n 
 	\t${RED}!!!!!!!!!!!! YOU NEED TO SET CHMOD +X FOR ALL SCRIPTS !!!!!!!!!!!! ${NC}"
 	;;
 
@@ -125,7 +132,8 @@ case $ch in
 
 	2)
 	install_files
-	echo -e "\n${LBLUE}All scripts are installed${NC}"
+	echo -e "\n${LBLUE}All scripts are installed${NC}\n"
+	\t${RED}!!!!!!!!!!!! YOU NEED TO SET CHMOD +X FOR ALL SCRIPTS !!!!!!!!!!!! ${NC}"
 	;;
 
 	?)
