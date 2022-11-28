@@ -132,7 +132,7 @@ case $ch in
 
 	2)
 	install_files
-	echo -e "\n${LBLUE}All scripts are installed${NC}\n"
+	echo -e "\n${LBLUE}All scripts are installed${NC}\n
 	\t${RED}!!!!!!!!!!!! YOU NEED TO SET CHMOD +X FOR ALL SCRIPTS !!!!!!!!!!!! ${NC}"
 	;;
 
