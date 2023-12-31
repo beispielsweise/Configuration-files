@@ -24,6 +24,15 @@ install_files () {
 			echo -e "[-]${RED} something went wrong while copying .bashrc${NC}"
 		fi
 
+  		# .gruvbox_modified
+		cp other/gruvbox-modified-by-retr0.vim /usr/share/nvim/runtime/colors
+		if [ $? == 0 ] 
+		then
+			echo -e "[+]${LBLUE} gruvbox-modified-by-retr0.vim succesfully copied${NC}"
+		else
+			echo -e "[-]${RED} something went wrong while copying gruvbox-modified-by-retr0.vim${NC}"
+		fi
+
 		# .gitconfig
 		cp config-files/.gitconfig ~/
 		if [ $? == 0 ] 
