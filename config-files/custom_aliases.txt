@@ -1,0 +1,26 @@
+# COMMANDS
+alias lal='l'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias fucking="sudo"
+alias please="sudo"
+#DIRECTORIES
+alias home="cd ~"
+alias apps="cd ~/Apps/"
+alias cppdir="cd ~/Programming/cpp/"
+alias ncdir="cd ~/.config/nvim"
+#FILES
+# alias brc="nvim ~/.bashrc"
+alias zrc="nvim ~/.zshrc"
+alias acf="nvim ~/.config/alacritty/alacritty.yml"
+#APPS
+alias nv="nvim"
+alias vg="valgrind"
+alias vgall="valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes"
+alias pbcopy="xclip -sel clip"
+alias intellij="cd ~/Apps/IntelliJIdea/bin/; ./idea.sh & disown; exit"
+alias gimp="gimp & disown; exit"
+
+export SUDO_EDITOR="nvim"
+alias sudoedit='function _sudoedit() { sudo -e "$1";};_sudoedit'
