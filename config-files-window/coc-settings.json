@@ -1,0 +1,10 @@
+{
+	"snippets.ultisnips.pythonPrompt": false,
+	"clangd.compilationDatabaseCandidates": ["${workspaceFolder}-CMakeFiles/", "${workspaceFolder}-build/current", "${workspaceFolder}-build" ,"${workspaceFolder}/build", "${workspaceFolder}/build_dir" ],
+	"workspace.ignoredFolders": [
+		"$HOME",
+	  "$HOME/.cargo/**",
+	  "$HOME/.rustup/**"
+	],
+	"rust-analyzer.serverPath": "C:\\Users\\egput\\Apps\\rust-analyzer\\rust-analyzer.exe"
+}
