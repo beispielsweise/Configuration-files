@@ -78,6 +78,14 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- This will enable lsp to use pre-installed clangd installation 
+    -- Used for nvim setup for an ARM machine
+    lspconfig.clangd.setup {
+      settings = {
+        ["clangd"] = {},
+      },
+    }
+    -- 
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
       function(server_name)
