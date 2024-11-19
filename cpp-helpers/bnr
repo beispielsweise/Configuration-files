@@ -1,0 +1,37 @@
+#!/bin/bash
+
+run() {
+  ./build/run
+}
+
+build() {
+  BUILD_DIR="build"
+
+  if [ ! -d "$BUILD_DIR" ]; then
+    mkdir "$BUILD_DIR"
+  fi
+
+  cmake -G "Ninja" -B "build" -S .
+}
+
+if [ "$#" -eq 0 ]; then
+  build
+  run
+  exit 0
+fi
+
+while getopts "BR" opt; do
+  case $opt in
+    B)
+      build
+      ;;
+    R)
+      run
+      ;;
+    *)
+      echo "Invalid argument!"
+      exit 1
+      ;;
+  esac
+done
+
