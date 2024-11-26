@@ -1,3 +1,28 @@
+clear
+tmux
+clear
+echo Splitting:
+echo -e "\tSplit terminal window vertically with Alt + ,"
+echo -e "\tSplit terminal window horizontally with Alt + ."
+echo
+echo Navigation:
+echo -e "\tNavigate windows with Ctrl + a + , and Ctrl + a + ."
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias fucking="sudo"
+alias please="sudo"
+alias home="cd ~"
+alias nvimdir="cd ~/.config/nvim"
+alias cppdir="cd ~/coding/cpp"
+alias brc="nvim ~/.bashrc"
+alias nv="nvim"
+
+
+# INITIAL VERSION
 # COMMANDS
 alias lal='l'
 alias ll='ls -alF'
