@@ -85,6 +85,22 @@ return {
         ["clangd"] = {},
       },
     }
+
+        -- lspconfig.rust_analyzer.setup({
+        --     cmd = { "/data/data/com.termux.nix/files/home/.nix-profile/bin/rust-analyzer" },
+        --     settings = {
+        --         ["rust-analyzer"] = {
+        --             cargo = {
+        --                 allFeatures = true,
+        --             },
+        --             procMacro = {
+        --                 enable = true,
+        --             },
+        --         },
+        --     },
+        -- })
+
+
     -- 
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
