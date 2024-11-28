@@ -28,6 +28,7 @@ return {
         "pyright",
         "clangd",
         "neocmake",
+        "rust-analyzer",
       },
     })
   end,
