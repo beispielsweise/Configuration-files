@@ -1,6 +1,5 @@
 vim.cmd("let g:netrw_liststyle=3")
 
-local g = vim.g
 local o = vim.o
 
 vim.scriptencoding = "utf-8"
@@ -30,7 +29,7 @@ o.clipboard = "unnamedplus"
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
--- o.autoindent = b 
+-- o.autoindent = b
 -- o.expandtab = b
 o.cursorline = true
 
@@ -46,4 +45,5 @@ function Transparent(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
+
 Transparent()
