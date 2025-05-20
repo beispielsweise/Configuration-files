@@ -1,0 +1,109 @@
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[terminal]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 13
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "BoldItalic"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "MediumItalic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Medium"
+
+[[colors.indexed_colors]]
+color = "0x5faf5f"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0x5f8787"
+index = 17
+
+[[colors.indexed_colors]]
+color = "0xaf005f"
+index = 18
+
+[[colors.indexed_colors]]
+color = "0x5faf00"
+index = 19
+
+[[colors.indexed_colors]]
+color = "0x5fafd7"
+index = 20
+
+[[colors.indexed_colors]]
+color = "0xd7875f"
+index = 21
+
+[colors.bright]
+black = "0xd7af5f"
+blue = "0xff5faf"
+cyan = "0xffaf00"
+green = "0xaf87d7"
+magenta = "0x00afaf"
+red = "0x585858"
+white = "0xd0d0d0"
+yellow = "0xafd700"
+
+[colors.cursor]
+cursor = "0x808080"
+text = "0x1c1c1c"
+
+[colors.normal]
+black = "0x1c1c1c"
+blue = "0xff5faf"
+cyan = "0xffaf00"
+green = "0xaf87d7"
+magenta = "0x00afaf"
+red = "0x585858"
+white = "0x808080"
+yellow = "0xafd700"
+
+[colors.primary]
+background = "0x1c1c1c"
+foreground = "0x808080"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[terminal.shell]
+args = ["--login"]
+program = "/usr/bin/bash" #zsh
+
+[window]
+decorations = "none"
+opacity = 0.9
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 100
+lines = 40
+
+[window.padding]
+x = 10
+y = 10
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[keyboard]
