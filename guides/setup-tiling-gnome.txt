@@ -24,5 +24,7 @@ Configure forge
 4. Other extentions:
     - Dash to Dock 
     - AppIndicator and KStatusNotifierItem Support
-5. Install Ulauncher for an app launcher
-ulauncher
+5. Install wofi for an app launcher
+wofi --show drun
+Copy config files
+6. Sometimes a bug occures and a window looses focus. To regain it, run regain-focus.sh

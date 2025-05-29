@@ -1,0 +1,8 @@
+width=500
+height=400
+show=drun
+prompt=Search:
+insensitive=true
+allow_markup=true
+term=alacritty
+show-icons=true
