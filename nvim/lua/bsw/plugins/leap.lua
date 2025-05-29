@@ -5,5 +5,7 @@ return {
     },
     config = function()
         require('leap').create_default_mappings()
+        -- s for forward search
+        -- S for backward search
     end,
 }

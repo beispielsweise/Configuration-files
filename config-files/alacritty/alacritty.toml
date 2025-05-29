@@ -1,0 +1,61 @@
+[terminal]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 13
+
+[font.bold]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMonoNL Nerd Font"
+style = "BoldItalic"
+
+[font.italic]
+family = "JetBrainsMonoNL Nerd Font"
+style = "MediumItalic"
+
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Medium"
+
+# [general]
+# import = [
+#     "~/.config/alacritty/themes/github_dark_high_contrast.toml"
+# ]
+#
+[scrolling]
+history = 10000
+multiplier = 3
+
+[terminal.shell]
+args = ["--login"]
+program = "/usr/bin/zsh" #zsh
+
+[window]
+decorations = "full"
+opacity = 0.90
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 100
+lines = 25
+
+[window.padding]
+x = 10
+y = 10
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[keyboard]
+bindings = [
+ { key = "Enter", mods = "Super", action = "ToggleMaximized" }
+]
+

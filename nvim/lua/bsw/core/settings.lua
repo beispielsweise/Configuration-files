@@ -13,7 +13,7 @@ o.shiftwidth = 4
 o.expandtab = true
 o.smarttab = true
 
-o.wrap = false
+o.wrap = true
 
 o.ignorecase = true
 o.smartcase = true
@@ -22,7 +22,7 @@ o.backspace = "indent,eol,start"
 o.splitright = true
 o.splitbelow = true
 
--- For Windows
+-- Enough for windows, for linux install xclip
 o.clipboard = "unnamedplus"
 
 -- For rust.vim plugin
