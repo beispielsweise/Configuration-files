@@ -75,6 +75,7 @@ return {
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
+            -- TODO: Edit this, deprecated!
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
@@ -86,21 +87,24 @@ return {
             },
         }
 
-        lspconfig.rust_analyzer.setup({
-            -- for ARM machines replace
-            -- cmd = { "/data/data/com.termux.nix/files/home/.nix-profile/bin/rust-analyzer" },
-            settings = {
-                ["rust-analyzer"] = {
-                    cargo = {
-                        allFeatures = true,
-                    },
-                    procMacro = {
-                        enable = true,
-                    },
-                },
-            },
-        })
-
+        -- Uncomment the whole thing if no debugging is required.
+        -- Delete rust-tools.lua
+        -- Uncomment for ARM setup or setup without debugger
+        -- lspconfig.rust_analyzer.setup({
+        --     -- for ARM machines replace
+        --     -- cmd = { "/data/data/com.termux.nix/files/home/.nix-profile/bin/rust-analyzer" },
+        --     settings = {
+        --         ["rust-analyzer"] = {
+        --             cargo = {
+        --                 allFeatures = true,
+        --             },
+        --             procMacro = {
+        --                 enable = true,
+        --             },
+        --         },
+        --     },
+        -- })
+        --
         mason_lspconfig.setup({
             -- default handler for installed servers
             function(server_name)

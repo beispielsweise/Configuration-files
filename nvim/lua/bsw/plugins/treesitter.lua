@@ -43,10 +43,10 @@ return {
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                    init_selection = "<C-space>",
-                    node_incremental = "<C-space>",
+                    init_selection = false,   -- "<C-space>",
+                    node_incremental = false, -- "<C-space>",
                     scope_incremental = false,
-                    node_decremental = "<bs>",
+                    node_decremental = false, --"<bs>",
                 },
             },
             rainbow = {
@@ -65,6 +65,6 @@ return {
 
         keymap.set('n', '<leader>zk', 'zM', { desc = "Fold all" })
         keymap.set('n', '<leader>zj', 'zR', { desc = "Unfold all" })
-        keymap.set('n', '<leader>zc', 'za', { desc = "Toggle fold under cursor" })
+        keymap.set('n', '<leader>zz', 'za', { desc = "Toggle fold under cursor" })
     end,
 }
