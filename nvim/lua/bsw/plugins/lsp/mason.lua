@@ -25,10 +25,7 @@ return {
             -- list of servers for mason to install
             ensure_installed = {
                 "lua_ls",
-                -- "clangd",
-                -- "neomake",
                 "rust_analyzer",
-                -- "codelldb",
             },
         })
     end,
