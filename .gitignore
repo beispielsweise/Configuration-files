@@ -1,0 +1,4 @@
+./config/nvim/lazy-lock.json
+
+./config/waybar/config
+./config/waybar/style.css
