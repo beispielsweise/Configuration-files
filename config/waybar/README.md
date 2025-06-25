@@ -1,12 +1,19 @@
-## Waybar setup
-To setup waybar run the following commands in your waybar directory (Replace <configname> and <stylename> with the corresponding names from corresponding folders) 
-```
-ln -s "configs/<configname>" config 
-ln -s "style/<stylename>" style.css
-```
+## Setting up waybar configuration
+By defualt config and style may or may not be defined.
+To properly use waybar, run the following commands in waybar directory:
 
-How to use:
-```
+ln -s "configs/<configname>" config
+ln -s "style/<stylename>" style.css
+
+e.g.:
 ln -s "configs/[TOP] Simple" config
 ln -s "style/[Colored] Translucent.css" style.css
-```
+
+##Personal favourites:
+###Configs:
+1. [TOP] 0-ja-0
+2. [BOTTOM] Default laptop (many cool modules and animations)
+###Styles:
+1. [DARK] Half-Moon
+2. [EXTRA] Modern-Combined
+3. [BLACK & WHITE] Monochrome

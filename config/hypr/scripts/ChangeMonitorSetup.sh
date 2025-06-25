@@ -1,12 +1,6 @@
 #!/bin/bash
 
-yad --title="Monitor Mode" --center --on-top --no-wrap --borders=20 \
-  --text="<span font='14'>Choose monitor setup:\n</span>" \
-  --button="󰍹  󰶐  Internal Only":1 \
-  --button="󰶐  󰍹  External Only":2 \
-  --button="󰍺  󰍺  Mirror":3 \
-  --button="󰷜  󱄄  Extend":4
-
+~/.config/yad/prompts/ChangeMonitorPrompt.sh
 case $? in
   1)
     hyprctl keyword monitor "HDMI-A-1,disable"
@@ -29,9 +23,6 @@ case $? in
     ;;
 esac
 
-sleep 1.2
-
-# Restart waybar
 pkill waybar
 sleep 0.3
 waybar &

@@ -1,15 +1,7 @@
 [global]
 corner_radius = 10
 icon_corner_radius = 10
-dmenu = /usr/bin/rofi -config notification -dmenu -p dunst:
-
-# [Type-1]
-# appname = "t1"
-# format = "<b>%s</b>"
-
-# [Type-2]
-# appname = "HyDE Notify"
-# format = "<span size="250%">%s</span>\n%b"
+dmenu = /usr/bin/rofi -config ~/.config/rofi/themes/notification.rasi -dmenu -p dunst:
 
 [Type-1]
 appname = "Alert"
@@ -19,12 +11,11 @@ format = "<b>%s</b>"
 appname = "Notify"
 format = "<span size="250%">%s</span>\n%b"
 
-
 [urgency_critical]
 background = "#f5e0dc"
 foreground = "#1e1e2e"
 frame_color = "#f38ba8"
-timeout = 0
+timeout = 5000
 
 # ------------------------------------------------------------------------------
 
@@ -88,11 +79,3 @@ new_icon = slack
 [telegram]
 desktop_entry = "^Telegram Desktop$"
 new_icon = telegram-desktop
-
-# HyDE Mandatory section // Non overridable // please open a request in https://github.com/HyDE-Project/HyDE
-# ------------------------------------------------------------------------------
-[global]
-
-font = Cantarell 12
-
-dmenu = /usr/bin/rofi -config notification -dmenu -p dunst:

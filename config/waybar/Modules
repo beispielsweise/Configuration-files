@@ -1,10 +1,4 @@
-//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
-/* Waybar Modules */
-
-/* NOTE: hyprland-workspaces, Custom Modules, Custom Vertical & Groups on a separate files */
-
 {
-
 "temperature": {
 	"interval": 10,
 	"tooltip": true,
@@ -13,7 +7,7 @@
 		"/sys/class/thermal/thermal_zone0/temp"
 	],
 	//"thermal-zone": 0,
-	"critical-threshold": 82,
+	"critical-threshold": 95,
 	"format-critical": "{temperatureC}°C {icon}",
 	"format": "{temperatureC}°C {icon}",
 	"format-icons": [
@@ -375,7 +369,7 @@
 
 "tray": {
 	"icon-size": 20,
-	"spacing": 4,
+	"spacing": 8,
 },
 
 "wireplumber": {
@@ -396,7 +390,7 @@
 	"all-outputs": false,
 	"tooltip-format": "{title}",
 	"on-click": "activate",
-	"on-click-middle": "close",
+	//"on-click-middle": "close",
 	"ignore-list": [
 		"wofi",
 		"rofi",

@@ -1,8 +1,3 @@
-//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
-/* Waybar Modules - Groups Modules */
-/* Basically created to reduce the lines in Waybar Modules bank */
-/* NOTE: This is only for Groups */
-
 {
 // GROUPS
 "group/app_drawer": {
@@ -21,6 +16,24 @@
 		"custom/settings",
 	]
 },
+"group/settings": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/menu",
+		"transition-left-to-right": false 
+        },
+	"modules": [
+		"custom/settings",
+        "custom/reload_wm",
+        "custom/passive_opacity",
+        "custom/active_opacity",
+        "custom/blur",
+		"custom/wallpaper",
+        "custom/monitors",
+	]
+},
+
 "group/motherboard": {
 	"orientation": "horizontal",
 	"modules": [
@@ -90,6 +103,8 @@
 	"modules": [
 		"custom/power",
 		"custom/lock",
+        "custom/suspend",
+        "custom/reboot",
 		"keyboard-state",
 		"custom/keyboard",
 	]

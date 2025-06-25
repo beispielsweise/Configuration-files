@@ -1,14 +1,6 @@
-configuration {
-    modi: "run,window,combi";
-    show-icons: true;
-    terminal: "alacritty";
-    drun-display-format: "{icon}, {name}";
-    disable-history: false;
-    hide-scrollbar: true;
-    display-combi: "All";
-    display-run: "Run";
-    display-window: "Window";
-    sidebar-mode: true;
-}
+/** Basic config file **/
 
-@theme "./themes/tokyonight.rasi"
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+}
