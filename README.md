@@ -6,6 +6,7 @@ For screenshots: ```grim slurp wl-copy wl-clipboard copyq```<br>
 Apps used in setup: ```alacritty dunst hyprlock swww waybar imv yad rofi```<br>
 Nemo: ```sudo pacman -S nemo --assume-installed cinnamon-desktop``` to avoid installing cinnamon dependencies<br>
 Some external monules and apps: ```xdg-desktop-portal-hyprland bc scrcpy```<br>
+Copy wallpapers to ```.config/swww/wallpapers```
 
 ## Other setup guides
 ### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/config/nvim/README.md):
