@@ -1,10 +1,8 @@
-To add exceptions of oppacity do different websites, do the following:
-
-Install Tampermonkey
+## To add exceptions of oppacity do different websites, do the following:
+1. Install Tampermonkey
 https://www.tampermonkey.net/index.php?version=5.3.3&ext=dhdg&updated=true
-
-Create a new script, which contains:
-
+2. Create a new script, which contains:
+```
 // ==UserScript==
 // @name         Universal Tab Title Prefixer
 // @namespace    https://yourdomain.com
@@ -33,5 +31,5 @@ Create a new script, which contains:
         new MutationObserver(applyPrefix).observe(titleEl, { childList: true });
     }
 })();
-
+```
 After that, the name of the website in formate <Name> Will be added to the front. Now you can set a rule for the name flag.
