@@ -1,12 +1,12 @@
 #!/bin/bash
 
-WALL_DIR="$HOME/.config/swww/wallpapers/"
+WALL_DIR="$HOME/.config/swww/walls/aerial/"
 CURRENT="$HOME/.cache/swww/current_wallpaper"
 TRANSITION="grow"
 DURATION="0.8"
 FPS="60"
 
-mapfile -t WALLS < <(find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' \) | sort)
+mapfile -t WALLS < <(find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.gif' \) | sort)
 
 if [[ ${#WALLS[@]} -eq 0 ]]; then
     echo "No wallpapers found in $WALL_DIR"

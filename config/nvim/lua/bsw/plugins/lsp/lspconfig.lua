@@ -84,12 +84,12 @@ return {
 
         -- This will enable lsp to use pre-installed clangd installation
         -- Used for nvim setup for an ARM machine
-        lspconfig.clangd.setup {
-            settings = {
-                ["clangd"] = {},
-            },
-        }
-
+        -- lspconfig.clangd.setup {
+        --     settings = {
+        --         ["clangd"] = {},
+        --     },
+        -- }
+        --
         -- Uncomment the whole thing if no debugging is required.
         -- Delete rust-tools.lua
         -- Uncomment for ARM setup or setup without debugger

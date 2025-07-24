@@ -10,3 +10,29 @@ This plugin needs to be compiled manually
 ```gcc, clang, make``` are required
 Navigate to ```~/.local/share/nvim/lazy/telescope-fzf-native.nvim``` and run ```make``` 
 If make doesn't work, you may also try ```cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build```
+
+## VsCode integration:
+Additional keybinds: <br>
+```
+    {
+      "key": "space e",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "!editorFocus"
+    }
+```
+Additional settings: <br>
+```
+{
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "single",
+  "zenMode.fullScreen": false,
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 35,
+  "editor.cursorSurroundingLinesStyle": "all",
+}
+```

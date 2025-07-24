@@ -16,6 +16,7 @@
 		"custom/settings",
 	]
 },
+
 "group/settings": {
 	"orientation": "inherit",
 	"drawer": {
@@ -75,8 +76,8 @@
 		"transition-left-to-right": true
         },
 	"modules": [
-		"pulseaudio",
-		"pulseaudio#microphone",
+		"custom/audio",
+		"custom/microphone",
 	]
 },
 
@@ -102,9 +103,10 @@
         },
 	"modules": [
 		"custom/power",
-		"custom/lock",
-        "custom/suspend",
         "custom/reboot",
+        "custom/suspend",
+        "custom/logout",
+		"custom/lock",
 		"keyboard-state",
 		"custom/keyboard",
 	]

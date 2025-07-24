@@ -7,32 +7,31 @@
 		"/sys/class/thermal/thermal_zone0/temp"
 	],
 	//"thermal-zone": 0,
-	"critical-threshold": 95,
+	"critical-threshold": 90,
 	"format-critical": "{temperatureC}°C {icon}",
 	"format": "{temperatureC}°C {icon}",
 	"format-icons": [
 		"󰈸"
 	],
-	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nvtop"
 },
 
 "backlight": {
-	"interval": 2,
+	"interval": 5,
 	"align": 0,
 	"rotate": 0,
 	//"format": "{icon} {percent}%",
 	"format-icons": [
-		" ",
-		" ",
-		" ",
-		"󰃝 ",
-		"󰃞 ",
-		"󰃟 ",
-		"󰃠 "
+		"",
+		"",
+		"",
+		"󰃞",
+		"󰃝",
+		"󰃟",
+		"󰃠"
 	],
 	"format": "{icon}",
 	//"format-icons": ["","","","","","","","","","","","","","",""],
-	"tooltip-format": "backlight {percent}%",
+	"tooltip-format": "Brightness: {percent}%",
 	"icon-size": 10,
 	"on-click": "",
 	"on-click-middle": "",
@@ -171,7 +170,8 @@
 "hyprland/language": {
 	"format": "Lang: {}",
 	"format-en": "US",
-	"format-tr": "Korea",
+	"format-de": "DE",
+    "format-ru": "RU",
 	"keyboard-name": "at-translated-set-2-keyboard",
 	"on-click": "hyprctl switchxkblayout $SET_KB next"
 },
@@ -226,7 +226,6 @@
 	"format-alt-click": "click",
 	"tooltip": true,
 	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
-	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --btop"
 },
 
 "mpris": {
@@ -298,13 +297,15 @@
 
 "power-profiles-daemon": {
   "format": "{icon} ",
-  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}\nLeft click: Change power profile",
   "tooltip": true,
   "format-icons": {
     "default": "",
     "performance": "",
-    "balanced": "",
-    "power-saver": ""
+    "balanced": "",
+    "power-saver": ""
+  },
+  "on-click": "$HOME/.config/hypr/scripts/CyclePowerProfiles.sh"  
   }
 },
 
@@ -315,7 +316,7 @@
 	"format-icons": {
 		"headphone": "",
 		"hands-free": "",
-		"headset": "",
+		"headset": "",
 		"phone": "",
 		"portable": "",
 		"car": "",
@@ -324,52 +325,34 @@
 		],
 		"ignored-sinks": [
 			"Easy Effects Sink"
-		],
+		]
 	},
-	"scroll-step": 5.0,
-	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
-	"on-click-right": "pavucontrol -t 3",
-	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
-	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
-	"tooltip-format": "{icon} {desc} | {volume}%",
+	"scroll-step": 1.0,
+	"on-click": "pamixer -t",
+	"on-click-right": "pamixer --set-volume 100",
+	"on-click-middle": "pavucontrol -t 3",
+	"on-scroll-up": "pamixer -i 1 --set-limit 100",
+	"on-scroll-down": "pamixer -d 1 --set-limit 100",
+	"tooltip-format": "{source_desc} | {source_volume}%\nLeft click: Toggle audio\nRight click: Set audio to 100%\nMiddle click: Open pavucontrol\nScroll up: Increase audio\nScroll down: Decrease audio",
 	"smooth-scrolling-threshold": 1,
-},
-
-"pulseaudio#1": {
-  "format": "{icon} {volume}%",
-  "format-bluetooth": "{icon} {volume}%",
-  "format-bluetooth-muted": " {icon}",
-  "format-muted": "󰸈",
-  "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    },
-  "on-click": "pamixer --toggle-mute",
-  "on-click-right": "pavucontrol -t 3",
-  "tooltip": true,
-  "tooltip-format": "{icon} {desc} | {volume}%",
 },
 
 "pulseaudio#microphone": {
 	"format": "{format_source}",
 	"format-source": " {volume}%",
-	"format-source-muted": "",
-	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle-mic",
-	"on-click-right": "pavucontrol -t 4",
-	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --mic-inc",
-	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --mic-dec",
-	"tooltip-format": "{source_desc} | {source_volume}%",
+	"format-source-muted": " ",
+	"on-click": "pamixer --default-source -t",
+	"on-click-right": "pamixer --default-source --set-volume 100",
+	"on-click-middle": "pavucontrol -t 4",
+	"on-scroll-up": "pamixer --default-source -i 1 --set-limit 100",
+	"on-scroll-down": "pamixer --default-source -d 1 --set-limit 100",
+	"tooltip-format": "{source_desc} | {source_volume}%\nLeft click: Toggle microphone\nRight click: Set microphone to 100%\nMiddle click: Open pavucontrol\nScroll up: Increase microphone sound\nScroll down: Decrease microphone sound",
 	"scroll-step": 5,
 },
 
 "tray": {
 	"icon-size": 20,
-	"spacing": 8,
+	"spacing": 10,
 },
 
 "wireplumber": {
