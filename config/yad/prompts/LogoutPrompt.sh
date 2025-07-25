@@ -7,7 +7,6 @@ yad --title="Logout" \
     --center \
     --on-top \
     --no-wrap \
-    --borders=20 \
-    --close-on-unfocus
+    --borders=20 
 
 exit $?

@@ -19,7 +19,6 @@
 "margin-right": 10,
 
 "modules-left": [
-    "custom/separator#dot-line",
     "custom/swaync",
 	"custom/separator#blank",
 	"tray",

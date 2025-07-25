@@ -32,4 +32,13 @@ https://www.tampermonkey.net/index.php?version=5.3.3&ext=dhdg&updated=true
     }
 })();
 ```
-After that, the name of the website in formate <Name> Will be added to the front. Now you can set a rule for the name flag.
+The script ensures that the title of the window will always content a Website adress at the start for future use
+
+3. Now you can set a rule for the name flag. The format is _Name_
+__Example:__
+```
+opacity-rule = [
+  "100:class_g = 'Brave-browser' && name *= 'Youtube'", 
+]
+```
+Youtube is used as an example, any name can be added

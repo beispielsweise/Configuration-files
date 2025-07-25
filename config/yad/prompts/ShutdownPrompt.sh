@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Unused example - to set a color for a yad window. 
+# GTK_THEME=Graphite-black yad ...
 yad --title="Shutdown" \
     --text="<span font='14'>Shutdown?\n</span>" \
     --button="  Yes":0 \
@@ -7,7 +9,6 @@ yad --title="Shutdown" \
     --center \
     --on-top \
     --no-wrap \
-    --borders=20 \
-    --close-on-unfocus
+    --borders=20 
 
 exit $?

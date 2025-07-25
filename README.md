@@ -3,13 +3,14 @@ This is a very minimal hyprland configuration. Easy to understand, does not incl
 
 ## Hyprland
 ### Required apps:
-For screenshots: ```grim slurp wl-copy wl-clipboard copyq```<br>
-Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi```<br>
-Nemo: ```sudo pacman -S nemo --assume-installed cinnamon-desktop``` to avoid installing cinnamon dependencies<br>
-Some external modules and apps: ```xdg-desktop-portal-hyprland bc scrcpy pamixer brightnessctl```<br>
-[Hyprland setup hints](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
-[Waybar setup hints](https://github.com/beispielsweise/configs/blob/main/config/waybar/README.md)<br>
-Install theme: [WhiteSur-Dark](https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master)
+For screenshots: ```grim slurp wl-copy wl-clipboard```<br>
+Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi dolphin copyq scrcpy pavucontrol ```<br>
+Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl```<br>
+### After installation:
+1. [Hyprland setup](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
+2. [Waybar setup](https://github.com/beispielsweise/configs/blob/main/config/waybar/README.md)<br>
+3. Install GTK theme: [WhiteSur-Dark](https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master)
+4. [Swww setup](https://github.com/beispielsweise/configs/blob/main/config/swww/README.md)<br>
 
 ## i3:
 i3 base installation required and ```picom polybar```<br>

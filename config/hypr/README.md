@@ -5,11 +5,6 @@ If the system does not have this problem, delete it
 ## Nvidia
 _nvidia.conf_ is only needed for a setup with nvidia, duh. Not need it - remove it.
 
-## Wallpapers
-To use wallpaper functionality ```swww``` is required. <br>
-To change wallpaper folder, where the ```.png``` or ```.jpg``` or ```.gif``` files are located, navigate to ```scripts/ChangeWallpaper.sh``` and change WALL_DIR to a required directory. <br>
-Cool wallpapers: ```https://github.com/dharmx/walls```, ```https://github.com/JaKooLit/Wallpaper-Bank```
-
 ## How to consistantly add opacity on different websites
 To add exceptions of oppacity do different websites, do the following:
 
@@ -48,16 +43,8 @@ To add exceptions of oppacity do different websites, do the following:
 The script ensures that the title of the window will always content a Website adress at the start for future use
 
 3. Now you can set a rule for the name flag. The format is _Name_
-
-__Example picom:__
-```
-opacity-rule = [
-  "100:class_g = 'Brave-browser' && name *= 'Youtube'", 
-]
-```
-__Example hyprland:__ 
+__Example:__ 
 ```
 windowrule = float,class:^(brave)$,title:^(Youtube)$
 ```  
-                          
 Youtube is used as an example, any name can be added

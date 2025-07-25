@@ -1,5 +1,4 @@
 ## Setting up waybar configuration
-By defualt config and style may or may not be defined.
-To properly use waybar, run the following commands in waybar directory:
+To properly use waybar, run the following commands in ```.config/waybar``` directory:
 
-ln -s "style/<stylename>" style.css
+```ln -s "style/custom-style-name.css" style.css```
