@@ -4,7 +4,7 @@ This is a very minimal hyprland configuration. Easy to understand, does not incl
 ## Hyprland
 ### Required apps:
 For screenshots: ```grim slurp wl-copy wl-clipboard```<br>
-Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi dolphin copyq scrcpy pavucontrol ```<br>
+Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi thunar copyq scrcpy pavucontrol ```<br>
 Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl```<br>
 ### After installation:
 1. [Hyprland setup](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
