@@ -4,7 +4,7 @@ This is a very minimal hyprland configuration. Easy to understand, does not incl
 ## Hyprland
 ### Required apps:
 For screenshots: ```grim slurp wl-copy wl-clipboard```<br>
-Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi thunar scrcpy pavucontrol```<br>
+Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi pcmanfm-gtk3 scrcpy pavucontrol```<br>
 Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl network-manager-applet```<br>
 ### After installation:
 1. [Hyprland setup](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
@@ -20,12 +20,13 @@ i3 base installation required and ```picom polybar```<br>
 ### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/config/nvim/README.md):
 ### Setups
 To setup and use second built-in SSD natively, preform the following steps:
-1. Create a directory for your disc e.g. ```mkdir -p ~/SSD2```
-2. Run ```sudo fdisk -l```. Mark the /dev/YOUR_PARTITION_NAME of the partition
-3. Get UUID of the partition by running ```sudo blkid /dev/YOUR_PARTITION_NAME```. 
+1. Disable hybernation in Windows (Via regedit)
+2. Create a directory for your disc e.g. ```mkdir -p ~/SSD2```
+3. Run ```sudo blkid```. Search for ```LABEL="1TB" BLOCK_SIZE="512" UUID="0624F1AC24F19F3D" TYPE="ntfs"```, important is the __LABEL__ matching the one you entered in windows. __TYPE__ should be NTFS. <br>
+copy the UUID
 4. Open the ```/etc/fstab``` file and add the following line:<br>
 ```
-UUID=YOUR_UUID  /home/USERNAME/SSD2 ntfs-3g  uid=1000,gid=1000,umask=0022  0  0
+UUID=COPIED_UUID /home/USERNAME/SSD2 ntfs-3g defaults,nofail,uid=1000,gid=1000,umask=0022 0 0
 ```
 <br>Just in case, check if the uid and gid values are correct by running ```id -u``` and ```id -g```
 
