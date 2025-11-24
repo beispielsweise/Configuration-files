@@ -31,7 +31,7 @@ UUID=COPIED_UUID /home/USERNAME/SSD2 ntfs-3g defaults,nofail,uid=1000,gid=1000,u
 <br>Just in case, check if the uid and gid values are correct by running ```id -u``` and ```id -g```
 
 ## Apps
-## MControlCenter
+## MControlCenter (deprecated, but can still be useful.)
 Controlls fans on an MSI laptop (Arch kernels have all modules, unlike fedora/pop_os or others) <br>
 To use an unsupported version (Like in my case)
 1. Open ```msi-ec.c``` in the cloned repository 

@@ -9,7 +9,7 @@ ICON="camera-photo"  # or use a path like "$HOME/.icons/screenshot.png"
 
 # Timestamped filename
 TIME=$(date "+%Y-%m-%d_%H-%M-%S")
-FILE="${DIR}/screenshot_${TIME}.png"
+FILE="${DIR}/screenshot_${TIME}.jpg"
 
 SLEEP_THRESHOLD="0.3"
 
