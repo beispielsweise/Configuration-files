@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALL_DIR="$HOME/.config/swww/walls/aerial/"
+WALL_DIR="$HOME/.config/swww"
 CURRENT="$HOME/.cache/swww/current_wallpaper"
 TRANSITION="grow"
 DURATION="0.8"

@@ -57,6 +57,7 @@
     border: 1px solid @noti-border-color;
     border-top: none;
     border-radius: 10px;
+    color: @text-color; 
 }
 
 .notification-default-action:hover,

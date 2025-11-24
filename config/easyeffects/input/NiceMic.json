@@ -2,7 +2,7 @@
     "input": {
         "autogain#0": {
             "bypass": false,
-            "input-gain": -28.9,
+            "input-gain": 0.0,
             "maximum-history": 6,
             "output-gain": 0.0,
             "reference": "Geometric Mean (MSI)",
