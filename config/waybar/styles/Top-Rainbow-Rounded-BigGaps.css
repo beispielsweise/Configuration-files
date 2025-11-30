@@ -175,7 +175,7 @@ color: #F3F4F5;
 	border-radius: 50px 50px;
 	margin: 5px;
 	padding-left: 8px;
-	padding-right: 2px;
+	padding-right: 4px;
 }
 
 #backlight {
@@ -302,7 +302,7 @@ color: #F3F4F5;
 	background: #0F1419;
 	border-radius: 50px 50px;
 	margin: 5px;
-    padding: 2px 15px 2px 10px
+    padding: 2px 13px 2px 9px
 }
 
 #custom-reload_wm { 
