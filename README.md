@@ -63,3 +63,12 @@ Insert the previously found EC version, preserving the formatting.
 > The module needs to be reinstalled on each linux kernel update
 ### EasyEffects
 For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
+
+## University notes syncing
+## Rclone
+1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
+Note the name of the remote (<remote name>) for later
+2. Run the command to sync you current local folder with remote GOodle Drive folder: <br>
+```rclone sync ~/<your-folder> <remote-name>:<google-drive-folder-name>```. Flag --progress to see results.
+3. Add the command with an alias to a .rc fil, e.g.: <br>
+```alias syncnotes="rclone copy ~/Notes THL_Notizen_GoogleDrive:Notizen"```
