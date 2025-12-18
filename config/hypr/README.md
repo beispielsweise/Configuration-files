@@ -6,6 +6,10 @@ If the system does not have this problem, delete it
 ## Nvidia
 _nvidia.conf_ is only needed for a setup with nvidia, duh. Not need it - remove it.
 
+## Monitors
+After a new installation monitors will need to be modified accordingly: <br>
+Under ```monitors.conf```, ```scripts/ChangeMonitorSetup.sh``` and ```scripts/ReloadMonitorSetup.sh``` 
+
 ## How to consistantly add opacity on different websites
 To add exceptions of oppacity do different websites, do the following:
 

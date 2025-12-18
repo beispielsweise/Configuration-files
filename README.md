@@ -69,6 +69,11 @@ For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
 Note the name of the remote (<remote name>) for later
 2. Run the command to sync you current local folder with remote GOodle Drive folder: <br>
-```rclone sync ~/<your-folder> <remote-name>:<google-drive-folder-name>```. Flag --progress to see results.
+```rclone sync ~/<your-folder> <remote-name>:<google-drive-folder-name>```. <br>
+Flag ```--progress``` to see results. <br>
+Flag ```--filter-from ~/.config/rclone/filters.txt``` or any other specified path to use a filter and avoid syncing unnecessary files. <br>
+The file can contain the following lines, e.g.:
+```- *.autosave.xopp```
 3. Add the command with an alias to a .rc fil, e.g.: <br>
-```alias syncnotes="rclone copy ~/Notes THL_Notizen_GoogleDrive:Notizen"```
+```alias syncnotes="rclone sync ~/Notes THL_Notizen_GoogleDrive:Notizen \
+  --filter-from ~/.config/rclone/filters.txt --progress"```
