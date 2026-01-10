@@ -17,12 +17,12 @@ clamp() {
 case "$1" in
   --inc)
     curr=$(get_brightness)
-    next=$(clamp $((curr + 5)))
+    next=$(clamp $((curr + 2)))
     brightnessctl set "${next}%"
     ;;
   --dec)
     curr=$(get_brightness)
-    next=$(clamp $((curr - 5)))
+    next=$(clamp $((curr - 2)))
     brightnessctl set "${next}%"
     ;;
   *)
