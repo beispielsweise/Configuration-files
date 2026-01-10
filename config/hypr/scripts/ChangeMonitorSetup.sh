@@ -4,14 +4,14 @@
 case $? in
   1)
     hyprctl keyword monitor "HDMI-A-1,disable"
-    hyprctl keyword monitor "eDP-1,preferred,0x0,auto"
+    hyprctl keyword monitor "eDP-1,preferred,0x0,1"
     ;;
   2)
     hyprctl keyword monitor "eDP-1,disable"
-    hyprctl keyword monitor "HDMI-A-1,preferred,0x0,auto"
+    hyprctl keyword monitor "HDMI-A-1,preferred,0x0,1"
     ;;
   3)
-    hyprctl keyword monitor "eDP-1,preferred,0x0,auto"
+    hyprctl keyword monitor "eDP-1,preferred,0x0,1"
     hyprctl keyword monitor "HDMI-A-1,preferred,1920x0,auto,mirror,eDP-1"
     ;;
   4)

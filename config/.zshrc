@@ -114,7 +114,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
 # Essentials
 alias ll='ls -alF'
 alias la='ls -A'
@@ -125,7 +124,6 @@ alias please ="sudo"
 
 # Other
 alias home="cd ~"
-alias rustdir="cd ~/Coding/rust"
 alias codingdir="cd ~/Coding/"
 alias zrc="nvim ~/.zshrc"
 alias alcf="nvim ~/.config/alacritty/alacritty.toml"
@@ -136,8 +134,11 @@ alias nv="nvim ."
 export SUDO_EDITOR="nvim"
 alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
 
-# i3
-alias i3cf="nvim ~/.config/i3/config"
-
 # Hyprland
 alias hyprdir="nvim ~/.config/hypr/"
+
+# Sync notes folder
+alias syncnotes="rclone sync ~/Notes THL_Notizen_GoogleDrive:Notizen \
+  --filter-from ~/.config/rclone/filters.txt --progress"
+
+./.config/hypr/scripts/ShowTTYLoginInfo.sh
