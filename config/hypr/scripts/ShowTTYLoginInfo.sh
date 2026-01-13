@@ -9,8 +9,8 @@ date '+  %a %d.%m.%Y %H:%M:%S'
 # Battery state
 bat="$(ls -d /sys/class/power_supply/BAT* 2>/dev/null | head -n1)"
 if [[ -n "$bat" ]]; then
-  echo "  Batterie: $(cat "$bat/capacity")% • $(cat "$bat/status")"
+  echo "  Battery: $(cat "$bat/capacity")% • $(cat "$bat/status")"
 else
-  echo "  Batterie: keine erkannt"
+  echo "  Battery: keine erkannt"
 fi
 echo
