@@ -64,6 +64,9 @@ Insert the previously found EC version, preserving the formatting.
 ### EasyEffects
 For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 
+## NBFC (Alternative to Fancontroll utility)
+See [setup](https://github.com/beispielsweise/configs/blob/main/config/nbfc/README.md)<br>
+
 ## University notes syncing
 ## Rclone
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
