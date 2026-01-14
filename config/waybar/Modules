@@ -3,8 +3,9 @@
 	"interval": 10,
 	"tooltip": true,
 	"hwmon-path": [
-		"/sys/class/hwmon/hwmon1/temp1_input",
-		"/sys/class/thermal/thermal_zone0/temp"
+        "/sys/class/hwmon/hwmon5/temp1_input", // coretemp
+		"/sys/class/hwmon/hwmon1/temp1_input", // fallback1
+		"/sys/class/thermal/thermal_zone0/temp" // fallback2
 	],
 	//"thermal-zone": 0,
 	"critical-threshold": 90,
