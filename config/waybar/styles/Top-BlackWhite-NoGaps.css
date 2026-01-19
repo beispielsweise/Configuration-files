@@ -7,13 +7,15 @@
 }
 
 window#waybar {
-  background-color: #0F1419;                 /* solid bar background */
-  border-bottom: 1px solid rgba(26,27,38,0);
-  border-radius: 0px;
-  color: #e6e6e6;
+    background-color: #0F1419;
+    border-bottom: 1px solid rgba(26,27,38,0);
+    border-radius: 0px;
+    color: #e6e6e6;
 }
 
-#waybar.empty, #waybar.tiled, #waybar.floating {
+#waybar.empty,
+#waybar.tiled,
+#waybar.floating {
     background-color: #0F1419;
 }
 
@@ -22,76 +24,72 @@ window#waybar.empty #window {
     background-color: #0F1419;
 }
 
-/* REMOVE ALL MODULE BACKGROUNDS + BORDERS, KEEP ALL ORIGINAL MARGINS/PADDINGS */
 #waybar * {
     background: transparent;
     border: 0px;
 }
 
-/* ---- ORIGINAL CSS BELOW (UNCHANGED spacing) ---- */
-
 #taskbar,
 #workspaces {
-  background: transparent;
-  margin: 5px;
-  padding: 0px 1px;
-  border-radius: 15px;
-  border: 0px;
-  font-style: normal;
-  color: #e6e6e6;
+    background: transparent;
+    margin: 5px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    border: 0px;
+    font-style: normal;
+    color: #e6e6e6;
 }
 
 #taskbar button,
 #workspaces button {
-  padding: 0px 5px;
-  margin: 4px 3px;
-  border-radius: 15px;
-  border: 0px;
-  color: #999999;           /* inactive = grey */
-  background: transparent; /* no background */
-  opacity: 0.5;
-  transition: color 0.2s ease, opacity 0.2s ease;
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #999999;
+    background: transparent;
+    opacity: 0.5;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 #taskbar button.active,
 #workspaces button.active {
-  padding: 0px 5px;
-  margin: 4px 3px;
-  border-radius: 15px;
-  border: 0px;
-  color: #e6e6e6;           /* active = white */
-  background: transparent; /* no background */
-  opacity: 1.0;
-  min-width: 40px;
-  transition: color 0.2s ease, opacity 0.2s ease;
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #e6e6e6;
+    background: transparent;
+    opacity: 1.0;
+    min-width: 40px;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-/* hover: text color only, background unchanged */
 #workspaces button:hover {
-  color: #bfbfbf;           /* midpoint between #999999 and #e6e6e6 */
-  background: transparent; /* explicitly keep background */
-  opacity: inherit;
+    color: #bfbfbf;
+    background: transparent;
+    opacity: inherit;
 }
 
 @keyframes gradient_horizontal {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes swiping {
-  0%   { background-position: 0% 200%; }
-  100% { background-position: 200% 200%; }
+    0%   { background-position: 0% 200%; }
+    100% { background-position: 200% 200%; }
 }
 
 tooltip {
-  background: #0F1419;
-  border: 1px solid #D2A6FF;
-  border-radius: 10px;
+    background: #0F1419;
+    border: 1px solid #D2A6FF;
+    border-radius: 10px;
 }
 
 tooltip label {
-  color: #e6e6e6;
+    color: #e6e6e6;
 }
 
 #window {
@@ -230,7 +228,7 @@ tooltip label {
     border-radius: 50px 50px;
     margin: 5px;
     padding: 2px 15px;
-    color: #0F1419; /* kept for readability against bright background */
+    color: #0F1419;
     background: transparent;
 }
 
@@ -373,3 +371,6 @@ tooltip label {
     border-radius: 5px;
     background-color: purple;
 }
+
+
+

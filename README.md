@@ -8,10 +8,10 @@ Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi pcmanf
 Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl network-manager-applet gnome-keyring rclone```<br>
 ### After installation:
 1. [Hyprland setup](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
-2. [Waybar setup](https://github.com/beispielsweise/configs/blob/main/config/waybar/README.md)<br>
+2. [Waybar setup](https://github.com/beispielsweise/configs/blob/main/config/waybar/README.md), [Swaync setup](https://github.com/beispielsweise/configs/blob/main/config/swaync/README.md)<br>
 3. Install GTK theme: [WhiteSur-Dark](https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master)
 4. Install JetbrainsMono Nerd font: copy ttf files to ```~/.local/share/fonts/``` then ```fc-cache -f -v```
-4. [Swww setup](https://github.com/beispielsweise/configs/blob/main/config/swww/README.md)<br>
+5. [Swww setup](https://github.com/beispielsweise/configs/blob/main/config/swww/README.md)<br>
 
 ## i3:
 i3 base installation required and ```picom polybar```<br>
@@ -31,7 +31,7 @@ UUID=COPIED_UUID /home/USERNAME/SSD2 ntfs-3g defaults,nofail,uid=1000,gid=1000,u
 <br>Just in case, check if the uid and gid values are correct by running ```id -u``` and ```id -g```
 
 ## Apps
-## MControlCenter (deprecated, but can still be useful.)
+# MControlCenter (deprecated, but can still be useful.)
 Controlls fans on an MSI laptop (Arch kernels have all modules, unlike fedora/pop_os or others) <br>
 To use an unsupported version (Like in my case)
 1. Open ```msi-ec.c``` in the cloned repository 
@@ -61,14 +61,13 @@ Insert the previously found EC version, preserving the formatting.
 7. Recompile ```make```, reinstall ```sudo make install``` and __REBOOT__ your system
 > [!NOTE]
 > The module needs to be reinstalled on each linux kernel update
-### EasyEffects
+# EasyEffects
 For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 
-## NBFC (Alternative to Fancontroll utility)
+# NBFC (Alternative utility to controll fans)
 See [setup](https://github.com/beispielsweise/configs/blob/main/config/nbfc/README.md)<br>
 
-## University notes syncing
-## Rclone
+## Folde syncing with rclone
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
 Note the name of the remote (<remote name>) for later
 2. Run the command to sync you current local folder with remote GOodle Drive folder: <br>

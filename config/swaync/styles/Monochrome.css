@@ -1,0 +1,267 @@
+@define-color text_primary #e6e6e6;
+@define-color text_dim #999999;
+
+@define-color surface_base rgba(0, 0, 0, 0.8);
+@define-color surface_panel alpha(@surface_base, 0.92);
+@define-color surface_card alpha(@surface_base, 0.82);
+@define-color surface_control rgba(15, 20, 25, 0.75);
+@define-color surface_control_hover rgba(15, 20, 25, 0.90);
+@define-color surface_control_active rgba(255, 255, 255, 0.12);
+
+@define-color border_subtle rgba(255, 255, 255, 0.13);
+
+@define-color danger #f53c3c;
+
+@define-color mpris_overlay rgba(0, 0, 0, 0.55);
+@define-color mpris_button_hover rgba(0, 0, 0, 0.5);
+
+@define-color switch_track_off rgba(255, 255, 255, 0.14);
+@define-color switch_track_on rgba(255, 255, 255, 0.22);
+@define-color switch_knob alpha(@surface_base, 0.9);
+
+* {
+    outline: none;
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: none;
+    color: @text_primary;
+    background-color: transparent;
+    background: transparent;
+}
+
+.control-center {
+    background-color: @surface_panel;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid @border_subtle;
+}
+
+.control-center .notification-row .notification-background {
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
+.notification {
+    background-color: @surface_card;
+    border-radius: 10px;
+    border: 2px solid @border_subtle;
+}
+
+.notification > *:last-child > *  {
+    margin: 5px;
+}
+
+.summary { font-size: 1.1rem; }
+.time { font-size: 0.8rem; }
+.body { font-size: 1rem; }
+
+.notification-content {
+    padding: 15px 10px 10px 20px;
+}
+
+.notification-action > button {
+    padding: unset;
+    margin: unset;
+}
+.notification-action > label {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.notification.critical {
+    background-color: alpha(@danger, 0.55);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
+}
+.notification.low,
+.notification.normal  {
+    background-color: alpha(@surface_base, 0.78);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
+}
+
+.close-button {
+    background-color: alpha(@surface_control, 0.8);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+    color: @surface_base;
+    border-radius: 10px;
+    padding: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.close-button:hover {
+    background-color: alpha(@danger, 0.8);
+}
+
+.notification-group-header,
+.notification-group-icon {
+    font-size: 0.9rem;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+    background-color: @surface_control;
+}
+
+.notification-group-collapse-button:hover {
+    background-color: @surface_control_hover;
+}
+.notification-group-close-all-button:hover {
+    background-color: alpha(@danger, 0.8);
+}
+
+tooltip {
+    background-color: @surface_control;
+}
+
+.widget-buttons-grid {
+    font-size: 1rem;
+    padding: 20px 20px 10px;
+    margin: unset;
+}
+.widget-buttons-grid > flowbox {
+    justify-content: center;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: @surface_control;
+    box-shadow: 0px 0px 10px alpha(@surface_base, 0.8);
+    border-radius: 12px;
+    min-width: 60px;
+    min-height: 30px;
+    padding: 6px;
+    margin: 0 3px 0;
+    transition: all .5s ease;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: @text_dim;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @border_subtle;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @surface_control_active;
+    color: @text_primary;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
+    background: alpha(@surface_control_active, 0.8);
+}
+
+.widget-mpris .widget-mpris-player {
+    padding: 16px;
+    margin: 16px 20px;
+    background-color: @mpris_overlay;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+}
+.widget-mpris .widget-mpris-player .widget-mpris-album-art {
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+}
+.widget-mpris .widget-mpris-player .widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0px 8px 8px 8px;
+}
+.widget-mpris .widget-mpris-player .widget-mpris-subtitle {
+    font-size: 1rem;
+}
+.widget-mpris .widget-mpris-player > box > button:hover {
+    background-color: @mpris_button_hover;
+}
+.widget-mpris > box > button:hover {
+    background: alpha(@border_subtle, 0.6);
+}
+
+.widget-volume {
+    padding: 6px 5px 5px 5px;
+    margin: unset;
+    font-size: 1.3rem;
+}
+.widget-volume > box > button {
+    border: none;
+}
+
+.widget-volume scale slider {
+    background-color: @text_primary;
+}
+
+.widget-volume scale trough highlight {
+    background-color: @text_primary;
+}
+
+.per-app-volume {
+    padding: 4px 8px 8px 8px;
+    margin: 0px 8px 8px 8px;
+}
+
+.widget-dnd {
+    font-weight: bold;
+    margin: unset;
+    padding: 20px 15px 15px 15px;
+    color: @border_subtle;
+}
+.widget-dnd > switch {
+    font-size: initial;
+    border-radius: 100px;
+    background: @switch_track_off;
+    border: none;
+    box-shadow: none;
+    padding: 3px;
+}
+.widget-dnd > switch:checked {
+    background: @switch_track_on;
+}
+.widget-dnd > switch slider {
+    background: @switch_knob;
+    border-radius: 12px;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+.widget-title {
+    padding: unset;
+    margin: unset;
+    font-weight: bold;
+    padding: 15px;
+    background: @surface_control;
+    border-radius: 10px;
+}
+.widget-title > label {
+    font-size: 1.5rem;
+}
+.widget-title > button {
+    padding: unset;
+    margin: unset;
+    text-shadow: none;
+    background: @danger;
+    border: none;
+    box-shadow: none;
+    border-radius: 100px;
+    padding: 0px 6px;
+    transition: all .7s ease;
+}
+.widget-title > button:hover {
+    background: alpha(@danger, 0.8);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: alpha(black, 0.1);
+}
+
+
+
