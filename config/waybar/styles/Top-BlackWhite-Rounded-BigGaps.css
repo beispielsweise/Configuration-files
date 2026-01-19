@@ -40,7 +40,7 @@ window#waybar.empty #window {
   border-radius: 15px;
   border: 0px;
   color: #999999;           /* inactive = grey */
-  background: transparent; /* no background */
+  background: transparent; 
   opacity: 0.5;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
@@ -52,16 +52,15 @@ window#waybar.empty #window {
   border-radius: 15px;
   border: 0px;
   color: #e6e6e6;           /* active = white */
-  background: transparent; /* no background */
+  background: transparent; 
   opacity: 1.0;
   min-width: 40px;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-/* hover: text color only, background unchanged */
 #workspaces button:hover {
-  color: #bfbfbf;           /* midpoint between #999999 and #e6e6e6 */
-  background: transparent; /* explicitly keep background */
+  color: #bfbfbf;           
+  background: transparent; 
   opacity: inherit;
 }
 
@@ -222,7 +221,7 @@ tooltip label {
 	border-radius: 50px 50px;
 	margin: 5px;
 	padding: 2px 15px;
-	color: #0F1419; /* kept for readability against bright background */
+	color: #0F1419; 
 	background: linear-gradient(45deg, #95E6CB, #59C2FF, #D2A6FF);
 }
 

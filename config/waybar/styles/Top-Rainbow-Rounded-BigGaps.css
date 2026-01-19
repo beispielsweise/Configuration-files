@@ -2,7 +2,6 @@
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
 	min-height: 0;  
-    /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
     font-size: 99%;
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
@@ -128,7 +127,6 @@ color: #F3F4F5;
 	padding: 2px 15px;
 }
 
-/*-----Indicators----*/
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
 	color: #39FF14;

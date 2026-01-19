@@ -2,7 +2,6 @@
 	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
 	min-height: 0;
-	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 	font-size: 97%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
@@ -29,8 +28,6 @@ tooltip label {
 	color: #e6e6e6;
 }
 
-/*-----module groups----*/
-
 .modules-left,
 .modules-center,
 .modules-right {
@@ -45,7 +42,6 @@ tooltip label {
 }
 
 
-/*-----modules indv----*/
 #taskbar button,
 #workspaces button {
 	color: #e6e6e6;
@@ -84,7 +80,6 @@ tooltip label {
 	border-radius: 10px;
 }
 
-/*-----unified padding fix for all modules, including missing ones-----*/
 #backlight,
 #backlight-slider,
 #battery,
@@ -175,7 +170,6 @@ tooltip label {
 	padding: 1px 3px;
 }
 
-/*-----Indicators----*/
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
 	color: #39FF14;
@@ -204,7 +198,6 @@ tooltip label {
 	animation-direction: alternate;
 }
 
-/*-----Slider Styling----*/
 #backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
