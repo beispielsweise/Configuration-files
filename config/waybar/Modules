@@ -167,7 +167,7 @@
 },
 
 "hyprland/language": {
-	"format": "Lang: {}",
+	"format": "{}",
 	"format-en": "US",
 	"format-de": "DE",
     "format-ru": "RU",

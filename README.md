@@ -5,7 +5,7 @@ This is a very minimal hyprland configuration. Easy to understand, does not incl
 ### Required apps:
 For screenshots: ```grim slurp wl-copy wl-clipboard```<br>
 Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi pcmanfm-gtk3 scrcpy pavucontrol```<br>
-Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl network-manager-applet gnome-keyring rclone```<br>
+Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl network-manager-applet gnome-keyring rclone gvfs```<br>
 ### After installation:
 1. [Hyprland setup](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
 2. [Waybar setup](https://github.com/beispielsweise/configs/blob/main/config/waybar/README.md), [Swaync setup](https://github.com/beispielsweise/configs/blob/main/config/swaync/README.md)<br>
@@ -18,6 +18,7 @@ i3 base installation required and ```picom polybar```<br>
 [Picom setup hints](https://github.com/beispielsweise/configs/blob/main/config/picom/README.md)<br>
 
 ### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/config/nvim/README.md):
+
 ### Setups
 To setup and use second built-in SSD natively, preform the following steps:
 1. Disable hybernation in Windows (Via regedit)
@@ -31,7 +32,7 @@ UUID=COPIED_UUID /home/USERNAME/SSD2 ntfs-3g defaults,nofail,uid=1000,gid=1000,u
 <br>Just in case, check if the uid and gid values are correct by running ```id -u``` and ```id -g```
 
 ## Apps
-# MControlCenter (deprecated, but can still be useful.)
+### MControlCenter (deprecated, but can still be useful.)
 Controlls fans on an MSI laptop (Arch kernels have all modules, unlike fedora/pop_os or others) <br>
 To use an unsupported version (Like in my case)
 1. Open ```msi-ec.c``` in the cloned repository 
@@ -61,13 +62,13 @@ Insert the previously found EC version, preserving the formatting.
 7. Recompile ```make```, reinstall ```sudo make install``` and __REBOOT__ your system
 > [!NOTE]
 > The module needs to be reinstalled on each linux kernel update
-# EasyEffects
+### EasyEffects
 For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 
-# NBFC (Alternative utility to controll fans)
+### NBFC (Alternative utility to controll fans)
 See [setup](https://github.com/beispielsweise/configs/blob/main/config/nbfc/README.md)<br>
 
-## Folde syncing with rclone
+### Folder syncing with rclone
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
 Note the name of the remote (<remote name>) for later
 2. Run the command to sync you current local folder with remote GOodle Drive folder: <br>
@@ -77,5 +78,5 @@ Flag ```--filter-from ~/.config/rclone/filters.txt``` or any other specified pat
 The file can contain the following lines, e.g.:
 ```- *.autosave.xopp```
 3. Add the command with an alias to a .rc fil, e.g.: <br>
-```alias syncnotes="rclone sync ~/Notes THL_Notizen_GoogleDrive:Notizen \
+```alias syncnotes="rclone sync ~/Notes GoogleDrive:Notizen \
   --filter-from ~/.config/rclone/filters.txt --progress"```
