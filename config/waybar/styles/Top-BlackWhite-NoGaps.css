@@ -162,6 +162,14 @@ tooltip label {
     padding: 2px 15px;
 }
 
+#language {
+    color: #e6e6e6;
+    background: transparent;
+    border-radius: 50px 50px;
+    margin: 5px;
+    padding: 2px 15px 4px 15px;
+}
+
 #mpris {
     color: #e6e6e6;
     background: transparent;

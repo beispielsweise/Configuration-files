@@ -38,6 +38,8 @@
 	"group/mobo_drawer",
 	"custom/separator#blank",  
 	"group/audio",
+	"custom/separator#blank",  
+    "hyprland/language",
     "custom/separator#blank",
     "group/settings",
 	"custom/separator#blank",
