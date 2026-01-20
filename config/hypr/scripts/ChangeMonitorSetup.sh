@@ -2,19 +2,19 @@
 
 ~/.config/yad/prompts/ChangeMonitorPrompt.sh
 case $? in
-  1)
+  1) # internal only
     hyprctl keyword monitor "HDMI-A-1,disable"
     hyprctl keyword monitor "eDP-1,preferred,0x0,1"
     ;;
-  2)
+  2) # external only
     hyprctl keyword monitor "eDP-1,disable"
     hyprctl keyword monitor "HDMI-A-1,preferred,0x0,1"
     ;;
-  3)
+  3) # mirror
     hyprctl keyword monitor "eDP-1,preferred,0x0,1"
     hyprctl keyword monitor "HDMI-A-1,preferred,0x0,auto,mirror,eDP-1"
     ;;
-  4)
+  4) # extend
     hyprctl keyword monitor "eDP-1,preferred,2560x0,1"
     hyprctl keyword monitor "HDMI-A-1,preferred,0x0,1"
     ;;
