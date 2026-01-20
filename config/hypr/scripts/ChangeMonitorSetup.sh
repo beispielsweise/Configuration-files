@@ -12,11 +12,11 @@ case $? in
     ;;
   3)
     hyprctl keyword monitor "eDP-1,preferred,0x0,1"
-    hyprctl keyword monitor "HDMI-A-1,preferred,1920x0,auto,mirror,eDP-1"
+    hyprctl keyword monitor "HDMI-A-1,preferred,0x0,auto,mirror,eDP-1"
     ;;
   4)
-    hyprctl keyword monitor "eDP-1,preferred,0x0,1"
-    hyprctl keyword monitor "HDMI-A-1,preferred,1920x0,1"
+    hyprctl keyword monitor "eDP-1,preferred,2560x0,1"
+    hyprctl keyword monitor "HDMI-A-1,preferred,0x0,1"
     ;;
   *)
     exit 0
@@ -24,5 +24,5 @@ case $? in
 esac
 
 pkill waybar
-sleep 0.3
+sleep 0.5
 waybar &
