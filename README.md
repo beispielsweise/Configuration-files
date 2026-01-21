@@ -4,18 +4,26 @@ This is a very minimal hyprland configuration. Easy to understand, does not incl
 ## Hyprland
 ### Required apps:
 For screenshots: ```grim slurp wl-copy wl-clipboard```<br>
-Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi pcmanfm-gtk3 scrcpy pavucontrol```<br>
+Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi pcmanfm-gtk3 scrcpy pavucontrol stow```<br>
 Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl network-manager-applet gnome-keyring rclone gvfs xarchiver p7zip unrar unzip zip```<br>
-### After installation:
-1. [Hyprland setup](https://github.com/beispielsweise/configs/blob/main/config/hypr/README.md)<br>
-2. [Waybar setup](https://github.com/beispielsweise/configs/blob/main/config/waybar/README.md), [Swaync setup](https://github.com/beispielsweise/configs/blob/main/config/swaync/README.md)<br>
+### Installation guide:
+1. After cloning the repository, run ```stow -v -t ~ ~/path-to-core/core```. This will simlink the core hyprland setup installation with stow.<br>
+Now you need to choose which host-specific setup you will need:<br>
+    For dual-gpu installation run ```stow -v -t ~ msi-laptop```<br>
+    For default gpu installation run ```stow -v -t ~ hp-laptop```<br>
+IMPORTANT: you must ALWAYS choose a host-specific setup to stow, otherwise the setup may be unstable.
+> [!NOTE]
+> A new host specific configuration can be created. it must include a path and a file ```.config/hypr/host.conf```. If you don't need to add new files into hypr directory, leave it _EMPTY_. Add new folders/files on a required level. If the new folders are _NOT_ setup-specific, use core
+2. [General hyprland setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/hypr/README.md)<br>
+[D-Gpu/nvidia hyprland setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/msi-laptop/.config/hypr/README.md)<br>
+3. [Waybar setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/waybar/README.md), [Swaync setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/swaync/README.md)<br>
 3. Install GTK theme: [WhiteSur-Dark](https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master)
 4. Install JetbrainsMono Nerd font: copy ttf files to ```~/.local/share/fonts/``` then ```fc-cache -f -v```
-5. [Swww setup](https://github.com/beispielsweise/configs/blob/main/config/swww/README.md)<br>
+5. [Swww setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/swww/README.md)<br>
 
 ## i3:
 i3 base installation required and ```picom polybar```<br>
-[Picom setup hints](https://github.com/beispielsweise/configs/blob/main/config/picom/README.md)<br>
+[Picom setup hints](https://github.com/beispielsweise/configs/blob/main/archive/config-i3/picom/README.md)<br>
 
 ### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/config/nvim/README.md):
 
@@ -61,12 +69,12 @@ static const char *ALLOWED_FW_14[] __initconst = {
 Insert the previously found EC version, preserving the formatting. 
 7. Recompile ```make```, reinstall ```sudo make install``` and __REBOOT__ your system
 > [!NOTE]
-> The module needs to be reinstalled on each linux kernel update
+> The module may need to be reinstalled after a linux kernel update
 ### EasyEffects
 For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 
 ### NBFC (Alternative utility to controll fans)
-See [setup](https://github.com/beispielsweise/configs/blob/main/config/nbfc/README.md)<br>
+See [setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/hp-laptop/.config/nbfc/README.md)<br>
 
 ### Folder syncing with rclone
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
@@ -78,5 +86,5 @@ Flag ```--filter-from ~/.config/rclone/filters.txt``` or any other specified pat
 The file can contain the following lines, e.g.:
 ```- *.autosave.xopp```
 3. Add the command with an alias to a .rc fil, e.g.: <br>
-```alias syncnotes="rclone sync ~/Notes GoogleDrive:Notizen \
+```alias syncnotes="rclone sync ~/Syncfolder GoogleDrive:Syncfolder \
   --filter-from ~/.config/rclone/filters.txt --progress"```
