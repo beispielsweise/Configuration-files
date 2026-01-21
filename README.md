@@ -12,6 +12,9 @@ Now you need to choose which host-specific setup you will need:<br>
     For dual-gpu installation run ```stow -v -t ~ msi-laptop```<br>
     For default gpu installation run ```stow -v -t ~ hp-laptop```<br>
 IMPORTANT: you must ALWAYS choose a host-specific setup to stow, otherwise the setup may be unstable.
+> [!IMPORTANT]
+> After adding new files/folders run ```stow -v -t ~ core``` 
+> After remove files/folders run ```stow -v -D -t ~ core``` 
 > [!NOTE]
 > A new host specific configuration can be created. it must include a path and a file ```.config/hypr/host.conf```. If you don't need to add new files into hypr directory, leave it _EMPTY_. Add new folders/files on a required level. If the new folders are _NOT_ setup-specific, use core
 2. [General hyprland setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/hypr/README.md)<br>
@@ -76,7 +79,7 @@ For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 ### NBFC (Alternative utility to controll fans)
 See [setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/hp-laptop/.config/nbfc/README.md)<br>
 
-### Folder syncing with rclone
+### Rclone (Folder syncing)
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
 Note the name of the remote (<remote name>) for later
 2. Run the command to sync you current local folder with remote GOodle Drive folder: <br>
