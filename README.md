@@ -13,8 +13,9 @@ Now you need to choose which host-specific setup you will need:<br>
     For default gpu installation run ```stow -v -t ~ hp-laptop```<br>
 IMPORTANT: you must ALWAYS choose a host-specific setup to stow, otherwise the setup may be unstable.
 > [!IMPORTANT]
-> After adding new files/folders run ```stow -v -t ~ core``` 
-> After remove files/folders run ```stow -v -D -t ~ core``` 
+> After adding new files/folders run ```stow -v -t ~ core```<br> 
+> After remove files/folders run ```stow -v -D -t ~ core```<br>
+
 > [!NOTE]
 > A new host specific configuration can be created. it must include a path and a file ```.config/hypr/host.conf```. If you don't need to add new files into hypr directory, leave it _EMPTY_. Add new folders/files on a required level. If the new folders are _NOT_ setup-specific, use core
 2. [General hyprland setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/hypr/README.md)<br>
