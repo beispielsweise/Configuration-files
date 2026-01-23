@@ -5,7 +5,7 @@ import qs.Services.QS.States
 
 Item {
     IpcHandler {
-        target: "screenshot"
+        target: "screenshotMenu"
 
         function toggle() {
             GlobalStatesController.toggleScreenshotMenu();

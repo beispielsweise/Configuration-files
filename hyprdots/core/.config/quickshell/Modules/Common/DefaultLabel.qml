@@ -1,12 +1,12 @@
-import Quickshell
 import QtQuick
+
+import qs.Appearance
 
 Text {
     id: root
 
-    property int customPointSize: 16
     property string customTextColor: "#f9fcf7"
 
-    font.pointSize: customPointSize
-    color: customTextColor
+    font.pointSize: Theme.defaultLabel.pointSize
+    color: Theme.colors.text
 }

@@ -2,18 +2,17 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
+import qs.Appearance
 import qs.Modules.Common
 import qs.Services.QS.States
 
 FloatingWindow {
     id: root
 
-    property string customBackgroundColor: "#000000"
-
     title: qsTr("Screenshot menu")
     implicitWidth: Math.max(400, buttonLayout.implicitWidth + 50)
     implicitHeight: 100
-    color: customBackgroundColor
+    color: Theme.colors.bgMain
 
     visible: GlobalStates.screenshotMenuVisible
 

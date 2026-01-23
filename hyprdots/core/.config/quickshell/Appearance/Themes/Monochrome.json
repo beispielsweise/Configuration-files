@@ -1,0 +1,32 @@
+{
+    "meta": { 
+        "name": "Monochrome", 
+        "version": 0.1
+    },
+    "colors": {
+        "bgMain": "#0F1419",
+        "bgPassive": "#131824",
+        "bgActive": "#202636",
+        "text": "#e6e6e6",
+        "textMuted": "#8f95a3",
+        "border": "#3a4152"
+    },
+    "metrics": {
+        "radius": 14,
+        "gapIn": 0,
+        "gapOut": 0
+    },
+    "controls": {
+        "button": {
+            "height": 32,
+            "minWidth": 120,
+            "padH": 15,
+            "padV": 4,
+            "radius": 10,
+            "borderWidth": 1
+        },
+        "label": { 
+            "pointSize": 16
+        }
+    }
+}
