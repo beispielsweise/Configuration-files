@@ -1,5 +1,13 @@
 # Quickshell Integration
 
+## Known Issues/plans
+
+__Notification__ No notification system, for now they are handeled by scripts (e.g. scripts/CaptureScreenshot.sh) with notify_send<br>
+This will obviously be replaced at some point, the probem is, it requires an understanding of the system notification retrieving logic, not a priority for now. swaync is the last thing i'll change
+__Bar__ Not implemented, starting with floating windows (all yad replacements), making a settings app to change hyprland stuff. Bar later.
+__Custom themes__ Template and outline exists allready, not a priority. Hopefully i won't need to rewrite this :)
+__Window navigation__ (closing with escape, arrows navigation, etc. )
+
 ## Tree explained below
 
 ### Appearance
@@ -52,7 +60,7 @@ Launches the app, initializes IPC and Components
 
 # Autocompletion neovim setup:
 1. Mason install ```qmlls```
-2. Add: <br>
+2. Add:
 ```
             ["qmlls"] = function()
                 lspconfig.qmlls.setup({
@@ -67,6 +75,6 @@ Launches the app, initializes IPC and Components
                 })
             end,
 ``` 
-to the lspconfig file. (adjust if needed)<br>
+to the lspconfig file. (adjust if needed)
 3. create .qmlls.ini file if not exists
 4. Autocomplete should work now. Sometimes it refreshes rather funky, a nvim restart may be needed

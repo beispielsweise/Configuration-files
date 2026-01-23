@@ -31,6 +31,11 @@ Now you need to choose which host-specific setup you will need:<br>
 4. Install JetbrainsMono Nerd font: copy ttf files to ```~/.local/share/fonts/``` then ```fc-cache -f -v```
 5. [Swww setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/swww/README.md)<br>
 
+### Quickshell 
+
+This branch contains experimental Quickshell integration that is bound to replace yad, waybar and swaync. Existing design decisions are outlined in<br>
+[Quickshell Guide](https://github.com/beispielsweise/configs/blob/experimental/hyprdots/core/.config/quickshell/README.md)
+
 ## i3:
 
 i3 base installation required and ```picom polybar```<br>

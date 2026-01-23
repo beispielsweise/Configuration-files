@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import qs.Appearance
 import qs.Modules.Common
 import qs.Services.QS.States
+import qs.Services.System
 
 FloatingWindow {
     id: root
@@ -47,14 +48,26 @@ FloatingWindow {
         CustomButton {
             id: areaBtn
             text: qsTr("󱂬  Area select")
+            onClicked: {
+                GlobalStatesController.toggleScreenshotMenu();
+                CaptureScreenshot.capture("area");
+            }
         }
         CustomButton {
             id: windowBtn
             text: qsTr("  Active Window")
+            onClicked: {
+                GlobalStatesController.toggleScreenshotMenu();
+                CaptureScreenshot.capture("window");
+            }
         }
         CustomButton {
             id: screenBtn
             text: qsTr("󰍹  Fullscreen")
+            onClicked: {
+                GlobalStatesController.toggleScreenshotMenu();
+                CaptureScreenshot.capture("fullscreen");
+            }
         }
     }
 
