@@ -1,3 +1,6 @@
+// portential theme loader, only properties here?
+// get all the values into the system (globalstate?)
+
 import Quickshell
 import QtQuick
 import "Monochrome.js" as ActiveTheme

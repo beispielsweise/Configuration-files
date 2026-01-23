@@ -7,6 +7,6 @@ Scope {
     id: root
 
     ScreenshotMenu {
-        visible: GlobalStates.screenshotMenuOpen
+        id: screenshotMenu
     }
 }

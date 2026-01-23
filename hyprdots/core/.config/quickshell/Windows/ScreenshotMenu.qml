@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.Modules.Common
+import qs.Services.QS.States
 
 FloatingWindow {
     id: root
@@ -13,6 +14,8 @@ FloatingWindow {
     implicitWidth: Math.max(400, buttonLayout.implicitWidth + 50)
     implicitHeight: 100
     color: customBackgroundColor
+
+    visible: GlobalStates.screenshotMenuVisible
 
     DefaultLabel {
         id: windowTitle
@@ -54,5 +57,10 @@ FloatingWindow {
             id: screenBtn
             text: qsTr("󰍹  Fullscreen")
         }
+    }
+
+    // Controller Functions
+    onClosed: {
+        GlobalStates.screenshotMenuVisible = false;
     }
 }

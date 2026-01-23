@@ -5,5 +5,5 @@ import Quickshell
 
 Singleton {
     id: root
-    property bool screenshotMenuOpen: false
+    property bool screenshotMenuVisible: false
 }
