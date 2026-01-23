@@ -107,7 +107,31 @@ return {
         --         },
         --     },
         -- })
-        --
+
+
+
+        -- Attempt at supressing [missing-property] qmlls quickshell quirk
+        do
+            local orig = vim.lsp.handlers["textDocument/publishDiagnostics"]
+
+            vim.lsp.handlers["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+                if result and result.diagnostics and ctx and ctx.client_id then
+                    local client = vim.lsp.get_client_by_id(ctx.client_id)
+
+                    -- Only filter qmlls
+                    if client and client.name == "qmlls" then
+                        result.diagnostics = vim.tbl_filter(function(diag)
+                            -- This matches qmlls warnings like:
+                            -- Member "paddingV" not found on type "QObject"
+                            return not diag.message:match("missing%-property")
+                        end, result.diagnostics)
+                    end
+                end
+
+                return orig(err, result, ctx, config)
+            end
+        end
+
         mason_lspconfig.setup({
             -- default handler for installed servers
             function(server_name)

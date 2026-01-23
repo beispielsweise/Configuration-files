@@ -4,6 +4,7 @@ import QtQuick.Layouts
 
 import qs.Appearance
 import qs.Modules.Common
+import qs.Modules.Shortcuts
 import qs.Services.QS.States
 import qs.Services.System
 
@@ -16,6 +17,11 @@ FloatingWindow {
     color: Theme.colors.bgMain
 
     visible: GlobalStates.screenshotMenuVisible
+    onVisibleChanged: {
+        if (visible) {
+            areaBtn.forceActiveFocus();
+        }
+    }
 
     DefaultLabel {
         id: windowTitle
@@ -48,24 +54,28 @@ FloatingWindow {
         CustomButton {
             id: areaBtn
             text: qsTr("󱂬  Area select")
+            KeyNavigation.right: windowBtn
             onClicked: {
-                GlobalStatesController.toggleScreenshotMenu();
+                GlobalStates.screenshotMenuVisible = false;
                 CaptureScreenshot.capture("area");
             }
         }
         CustomButton {
             id: windowBtn
             text: qsTr("  Active Window")
+            KeyNavigation.right: screenBtn
+            KeyNavigation.left: areaBtn
             onClicked: {
-                GlobalStatesController.toggleScreenshotMenu();
+                GlobalStates.screenshotMenuVisible = false;
                 CaptureScreenshot.capture("window");
             }
         }
         CustomButton {
             id: screenBtn
             text: qsTr("󰍹  Fullscreen")
+            KeyNavigation.left: windowBtn
             onClicked: {
-                GlobalStatesController.toggleScreenshotMenu();
+                GlobalStates.screenshotMenuVisible = false;
                 CaptureScreenshot.capture("fullscreen");
             }
         }
@@ -74,5 +84,11 @@ FloatingWindow {
     // Controller Functions
     onClosed: {
         GlobalStates.screenshotMenuVisible = false;
+    }
+
+    EscapeShortcut {
+        onActivated: {
+            GlobalStates.screenshotMenuVisible = false;
+        }
     }
 }

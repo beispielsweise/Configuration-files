@@ -2,9 +2,12 @@ import QtQuick
 import QtQuick.Controls
 
 import qs.Appearance
+import qs.Modules.Shortcuts
 
 Button {
     id: root
+
+    focusPolicy: Qt.StrongFocus
 
     topPadding: Theme.customButton.paddingV
     rightPadding: Theme.customButton.paddingH
@@ -28,9 +31,18 @@ Button {
     background: Rectangle {
         radius: Theme.customButton.radius
 
-        border.width: Theme.customButton.borderWidth
+        border.width: root.hovered || root.activeFocus ? Theme.customButton.borderWidth + 1 : Theme.customButton.borderWidth
         border.color: Theme.customButton.borderColor
 
-        color: root.down ? Theme.colors.bgDown : root.hovered ? Theme.colors.bgHovered : Theme.colors.bgActive
+        color: root.down ? Theme.colors.bgDown : root.hovered || root.activeFocus ? Theme.colors.bgHovered : Theme.colors.bgActive
+    }
+
+    Keys.onPressed: ev => {
+        if (!root.enabled)
+            return;
+        if (ev.key === Qt.Key_Return || ev.key === Qt.Key_Enter) {
+            root.clicked();
+            ev.accepted = true;
+        }
     }
 }
