@@ -132,6 +132,18 @@ return {
                     },
                 })
             end,
+            ["qmlls"] = function()
+                lspconfig.qmlls.setup({
+                    cmd = {
+                        "qmlls",
+                        "-E", "/usr/lib/qt6/qml",
+                    },
+
+                    root_dir = util.root_pattern(".qmlls.ini", "shell.qml", ".git"),
+
+                    single_file_support = true,
+                })
+            end,
         })
     end,
 }

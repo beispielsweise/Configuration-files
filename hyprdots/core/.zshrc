@@ -124,8 +124,9 @@ export SUDO_EDITOR="nvim"
 alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
 
 # Hyprland
-alias hyprdir="nvim ~/Configuration-files/hyprdots/core/.config/hypr"
-alias hyprdots="nvim ~/Configuration-files/hyprdots"
+alias hyprdir="cd ~/Configuration-files/hyprdots/core/.config/hypr"
+alias hyprdots="cd ~/Configuration-files/hyprdots"
+alias qsdirex="cd ~/Configuration-files-experimental/hyprdots/core/.config/quickshell/"
 
 # Sync notes folder
 alias syncfolder="rclone sync ~/Syncfolder THL_Notizen_GoogleDrive:Syncfolder \

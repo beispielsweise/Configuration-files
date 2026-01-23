@@ -2,16 +2,22 @@
 This is a very minimal hyprland configuration. Easy to understand, does not include any fancy themeswitching and scripting. <br>
 
 ## Hyprland
+
 ### Required apps:
+
 For screenshots: ```grim slurp wl-copy wl-clipboard```<br>
 Apps used in setup: ```alacritty swaync hyprlock swww waybar imv yad rofi pcmanfm-gtk3 scrcpy pavucontrol stow```<br>
 Some external modules and apps: ```xdg-desktop-portal-hyprland bc pamixer brightnessctl network-manager-applet gnome-keyring rclone gvfs xarchiver p7zip unrar unzip zip```<br>
+
 ### Installation guide:
+
 1. After cloning the repository, run ```stow -v -t ~ ~/path-to-core/core```. This will simlink the core hyprland setup installation with stow.<br>
 Now you need to choose which host-specific setup you will need:<br>
-    For dual-gpu installation run ```stow -v -t ~ msi-laptop```<br>
-    For default gpu installation run ```stow -v -t ~ hp-laptop```<br>
-IMPORTANT: you must ALWAYS choose a host-specific setup to stow, otherwise the setup may be unstable.
+<t>For dual-gpu installation run ```stow -v -t ~ msi-laptop```<br>
+<t>For default gpu installation run ```stow -v -t ~ hp-laptop```<br>
+> [!IMPORTANT]
+> You must ALWAYS choose a host-specific setup to stow, otherwise the setup may be unstable.
+
 > [!IMPORTANT]
 > After adding new files/folders run ```stow -v -t ~ core```<br> 
 > After remove files/folders run ```stow -v -D -t ~ core```<br>
@@ -26,12 +32,14 @@ IMPORTANT: you must ALWAYS choose a host-specific setup to stow, otherwise the s
 5. [Swww setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/swww/README.md)<br>
 
 ## i3:
+
 i3 base installation required and ```picom polybar```<br>
 [Picom setup hints](https://github.com/beispielsweise/configs/blob/main/archive/config-i3/picom/README.md)<br>
 
-### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/config/nvim/README.md):
+### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/nvim/README.md):
 
 ### Setups
+
 To setup and use second built-in SSD natively, preform the following steps:
 1. Disable hybernation in Windows (Via regedit)
 2. Create a directory for your disc e.g. ```mkdir -p ~/SSD2```
@@ -44,7 +52,9 @@ UUID=COPIED_UUID /home/USERNAME/SSD2 ntfs-3g defaults,nofail,uid=1000,gid=1000,u
 <br>Just in case, check if the uid and gid values are correct by running ```id -u``` and ```id -g```
 
 ## Apps
+
 ### MControlCenter (deprecated, but can still be useful.)
+
 Controlls fans on an MSI laptop (Arch kernels have all modules, unlike fedora/pop_os or others) <br>
 To use an unsupported version (Like in my case)
 1. Open ```msi-ec.c``` in the cloned repository 
@@ -74,13 +84,17 @@ Insert the previously found EC version, preserving the formatting.
 7. Recompile ```make```, reinstall ```sudo make install``` and __REBOOT__ your system
 > [!NOTE]
 > The module may need to be reinstalled after a linux kernel update
+
 ### EasyEffects
+
 For a microphone upgrade. Make sure to tick "Launch on startup" in preferences.
 
 ### NBFC (Alternative utility to controll fans)
+
 See [setup](https://github.com/beispielsweise/configs/blob/main/hyprdots/hp-laptop/.config/nbfc/README.md)<br>
 
 ### Rclone (Folder syncing)
+
 1. Install rclone, run ```rclone-config``` and finish setting up the Google Drive account <br>
 Note the name of the remote (<remote name>) for later
 2. Run the command to sync you current local folder with remote GOodle Drive folder: <br>
