@@ -13,8 +13,8 @@ Button {
     bottomPadding: Theme.customButton.paddingV
     leftPadding: Theme.customButton.paddingH
 
-    implicitHeight: Math.max(Theme.customButton.minHeight)
-    implicitWidth: Math.max(Theme.customButton.minWidth, contentItem.implicitWidth + leftPadding + rightPadding)
+    implicitHeight: Theme.customButton.height
+    implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
     font.pointSize: Theme.customButton.pointSize
     font.family: Theme.fontFamily

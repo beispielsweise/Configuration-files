@@ -11,4 +11,20 @@ Item {
             GlobalStatesController.toggleScreenshotMenu();
         }
     }
+
+    IpcHandler {
+        target: "shutdownMenu"
+
+        function toggle() {
+            GlobalStatesController.toggleShutdownMenu();
+        }
+    }
+
+    IpcHandler {
+        target: "rebootMenu"
+
+        function toggle() {
+            GlobalStatesController.toggleRebootMenu();
+        }
+    }
 }

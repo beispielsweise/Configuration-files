@@ -126,6 +126,7 @@ alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
 # Hyprland
 alias hyprdir="cd ~/Configuration-files/hyprdots/core/.config/hypr"
 alias hyprdots="cd ~/Configuration-files/hyprdots"
+alias hyprdirex="cd ~/Configuration-files-experimental/hyprdots/core/.config/hypr"
 alias qsdirex="cd ~/Configuration-files-experimental/hyprdots/core/.config/quickshell/"
 
 # Sync notes folder

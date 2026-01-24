@@ -23,8 +23,7 @@ QtObject {
     }
 
     property QtObject customButton: QtObject {
-        property int minHeight: 30
-        property int minWidth: 120
+        property int height: 30
         property int pointSize: 12
         property int paddingH: 25
         property int paddingV: 0

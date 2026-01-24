@@ -12,4 +12,16 @@ Scope {
         activeAsync: GlobalStates.screenshotMenuVisible
         component: ScreenshotMenu {}
     }
+
+    LazyLoader {
+        id: shutdownMenuLoader
+        activeAsync: GlobalStates.shutdownMenuVisible
+        component: ShutdownMenu {}
+    }
+
+    LazyLoader {
+        id: rebootMenuLoader
+        activeAsync: GlobalStates.rebootMenuVisible
+        component: RebootMenu {}
+    }
 }
