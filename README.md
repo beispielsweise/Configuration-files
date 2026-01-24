@@ -34,7 +34,8 @@ Now you need to choose which host-specific setup you will need:<br>
 ### Quickshell 
 
 This branch contains experimental Quickshell integration that is bound to replace yad, waybar and swaync. Existing design decisions are outlined in<br>
-[Quickshell Guide](https://github.com/beispielsweise/configs/blob/experimental/hyprdots/core/.config/quickshell/README.md)
+[Quickshell Guide](https://github.com/beispielsweise/configs/blob/experimental/hyprdots/core/.config/quickshell/README.md)<br>
+Installed ```Google Sans Flex```, using it for everything
 
 ## i3:
 

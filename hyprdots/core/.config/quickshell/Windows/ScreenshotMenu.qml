@@ -35,7 +35,7 @@ FloatingWindow {
             topMargin: 10
         }
 
-        text: qsTr("Take screenshot")
+        text: qsTr("Screenshot")
     }
 
     RowLayout {
@@ -49,7 +49,7 @@ FloatingWindow {
             topMargin: 10
         }
 
-        spacing: 18
+        spacing: 10
 
         CustomButton {
             id: areaBtn

@@ -5,8 +5,8 @@ import qs.Appearance
 Text {
     id: root
 
-    property string customTextColor: "#f9fcf7"
-
     font.pointSize: Theme.defaultLabel.pointSize
+    font.family: Theme.fontFamily
+
     color: Theme.colors.text
 }

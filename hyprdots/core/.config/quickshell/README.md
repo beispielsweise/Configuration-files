@@ -4,7 +4,7 @@
 
 __Notification__ No notification system, for now they are handeled by scripts (e.g. scripts/CaptureScreenshot.sh) with notify_send<br>
 This will obviously be replaced at some point, the probem is, it requires an understanding of the system notification retrieving logic, not a priority for now. swaync is the last thing i'll change<br>
-__Bar__ Not implemented, starting with floating windows (all yad replacements), making a settings app to change hyprland stuff. Bar later.<br>
+__Bar__ Placeholder implemented, will be expanded later.
 __Custom themes__ Template and outline exists allready, not a priority. Hopefully i won't need to rewrite this :)<br>
 __Window navigation__ Example implemented for ScreenshotWindow using Shortcut and CustomButton<br>
 
@@ -38,8 +38,7 @@ General Quickshell services, that do not interact with the system
 #### Bootstrap
 
 __IPCRouter__ Contains a IPC handler for functions* that are exposed for the user to bind via ```qs ipc call <component> <function>```<br> Will be expended in the future. <br>
-__InitializeWindowInstance__ Initiizes all available window instances to be used later in the lifecycle<br><br>
-These qml files should realistically be called only in shell.qml
+__InitializeWindowInstance__ Initiizes Bar instance(required for lazy loader to work), LazyLoads every other window to free up RAM<br><br>
 
 #### States
 
@@ -64,8 +63,8 @@ Launches the app, initializes IPC and Components
 
 # Autocompletion neovim setup:
 1. Mason install ```qmlls```
-2. Add:
-```
+2. Add: 
+    ```
             ["qmlls"] = function()
                 lspconfig.qmlls.setup({
                     cmd = {
@@ -78,8 +77,8 @@ Launches the app, initializes IPC and Components
                     single_file_support = true,
                 })
             end,
-``` 
-to the lspconfig file. (adjust if needed)
+    ``` 
+    to the lspconfig file. (adjust if needed)
 3. Optionally add this block before mason_lspconfig.setup()
 ```
         -- Attempt at supressing [missing-property] qmlls quickshell quirk
@@ -104,6 +103,6 @@ to the lspconfig file. (adjust if needed)
             end
         end
 ```
-This will supress the annoying [missing-property] false warning, but beware that now you won't know if you have incorrect variables
+    This will supress the annoying [missing-property] false warning, but beware that now you won't know if you have incorrect variables
 3. create .qmlls.ini file if not exists
 4. Autocomplete should work now. Sometimes it refreshes rather funky, a nvim restart may be needed

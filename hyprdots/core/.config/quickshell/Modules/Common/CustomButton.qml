@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 
 import qs.Appearance
-import qs.Modules.Shortcuts
 
 Button {
     id: root
@@ -14,10 +13,11 @@ Button {
     bottomPadding: Theme.customButton.paddingV
     leftPadding: Theme.customButton.paddingH
 
-    implicitHeight: Math.max(32, contentItem.implicitHeight + bottomPadding + topPadding)
-    implicitWidth: Math.max(120, contentItem.implicitWidth + leftPadding + rightPadding)
+    implicitHeight: Math.max(Theme.customButton.minHeight)
+    implicitWidth: Math.max(Theme.customButton.minWidth, contentItem.implicitWidth + leftPadding + rightPadding)
 
     font.pointSize: Theme.customButton.pointSize
+    font.family: Theme.fontFamily
 
     contentItem: Label {
         text: root.text
