@@ -5,6 +5,7 @@ import Quickshell
 
 Singleton {
     property bool screenshotMenuVisible: false
+    property bool monitorSetupMenuVisible: false
     property bool shutdownMenuVisible: false
     property bool rebootMenuVisible: false
     property bool sleepMenuVisible: false

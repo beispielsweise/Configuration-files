@@ -6,6 +6,8 @@ import qs.Appearance
 Button {
     id: root
 
+    property int maxWidth: contentItem.implicitWidth + leftPadding + rightPadding
+
     focusPolicy: Qt.StrongFocus
 
     topPadding: Theme.customButton.paddingV
@@ -14,7 +16,7 @@ Button {
     leftPadding: Theme.customButton.paddingH
 
     implicitHeight: Theme.customButton.height
-    implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
+    implicitWidth: maxWidth
 
     font.pointSize: Theme.customButton.pointSize
     font.family: Theme.fontFamily

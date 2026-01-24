@@ -14,6 +14,12 @@ Scope {
     }
 
     LazyLoader {
+        id: monitorSetupMenuLoader
+        activeAsync: GlobalStates.monitorSetupMenuVisible
+        component: MonitorSetupMenu {}
+    }
+
+    LazyLoader {
         id: shutdownMenuLoader
         activeAsync: GlobalStates.shutdownMenuVisible
         component: ShutdownMenu {}

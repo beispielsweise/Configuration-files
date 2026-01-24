@@ -8,6 +8,10 @@ Singleton {
         GlobalStates.screenshotMenuVisible = !GlobalStates.screenshotMenuVisible;
     }
 
+    function toggleMonitorSetupMenu() {
+        GlobalStates.monitorSetupMenuVisible = !GlobalStates.monitorSetupMenuVisible;
+    }
+
     function toggleShutdownMenu() {
         GlobalStates.shutdownMenuVisible = !GlobalStates.shutdownMenuVisible;
     }

@@ -26,7 +26,7 @@ MenuWindow {
             KeyNavigation.right: noBtn
             onClicked: {
                 GlobalStates.shutdownMenuVisible = false;
-                ChangeSystemState.sleep();
+                ChangeSystemState.shutdown();
             }
         }
         CustomButton {

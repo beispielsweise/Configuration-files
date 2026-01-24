@@ -13,6 +13,14 @@ Item {
     }
 
     IpcHandler {
+        target: "monitorSetupMenu"
+
+        function toggle() {
+            GlobalStatesController.toggleMonitorSetupMenu();
+        }
+    }
+
+    IpcHandler {
         target: "shutdownMenu"
 
         function toggle() {
