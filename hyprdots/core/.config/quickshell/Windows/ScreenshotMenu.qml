@@ -12,11 +12,12 @@ FloatingWindow {
     id: root
 
     title: qsTr("Screenshot menu")
+
     implicitWidth: Math.max(400, buttonLayout.implicitWidth + 50)
     implicitHeight: 100
+
     color: Theme.colors.bgMain
 
-    visible: GlobalStates.screenshotMenuVisible
     onVisibleChanged: {
         if (visible) {
             areaBtn.forceActiveFocus();
@@ -30,7 +31,6 @@ FloatingWindow {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
         }
-
         anchors {
             topMargin: 10
         }

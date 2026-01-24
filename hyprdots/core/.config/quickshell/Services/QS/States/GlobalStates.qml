@@ -4,6 +4,5 @@ import QtQuick
 import Quickshell
 
 Singleton {
-    id: root
     property bool screenshotMenuVisible: false
 }
