@@ -26,8 +26,19 @@ Responsible for loading and parsing .json themes (Template)
 
 ### Modules
 
-Contains reusable modules, such as custom buttons, lables, pages, sliders etc (will be expanded)<br>
-General-use items that are _not_ Window or Component specific are kept in the main directory, window-specific pages will be kept in subdirectories
+#### Common
+
+Common reusable single elements (buttons, sliders, lables, etc)<br>
+Window-specific ones will be separated into subdirectories
+
+### Shortcuts
+
+Contains a reusable escape shortcut, probably wont be expanded
+
+#### Windows
+
+Contains templates for windows. Will contain pages for Settings window etc<br>
+Example: MenuWindow - a reusable parent component to Suspend/Logout/Sleep/... menus. 
 
 ### Services
 

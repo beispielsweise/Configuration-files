@@ -7,4 +7,6 @@ Singleton {
     property bool screenshotMenuVisible: false
     property bool shutdownMenuVisible: false
     property bool rebootMenuVisible: false
+    property bool sleepMenuVisible: false
+    property bool logoutMenuVisible: false
 }

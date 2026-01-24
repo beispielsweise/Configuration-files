@@ -24,4 +24,16 @@ Scope {
         activeAsync: GlobalStates.rebootMenuVisible
         component: RebootMenu {}
     }
+
+    LazyLoader {
+        id: sleepMenuLoader
+        activeAsync: GlobalStates.sleepMenuVisible
+        component: SleepMenu {}
+    }
+
+    LazyLoader {
+        id: logoutMenuLoader
+        activeAsync: GlobalStates.logoutMenuVisible
+        component: LogoutMenu {}
+    }
 }

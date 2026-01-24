@@ -27,4 +27,20 @@ Item {
             GlobalStatesController.toggleRebootMenu();
         }
     }
+
+    IpcHandler {
+        target: "sleepMenu"
+
+        function toggle() {
+            GlobalStatesController.toggleSleepMenu();
+        }
+    }
+
+    IpcHandler {
+        target: "logoutMenu"
+
+        function toggle() {
+            GlobalStatesController.toggleLogoutMenu();
+        }
+    }
 }

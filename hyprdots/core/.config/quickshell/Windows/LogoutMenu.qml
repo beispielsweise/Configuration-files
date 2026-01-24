@@ -9,8 +9,8 @@ import qs.Services.System
 MenuWindow {
     id: root
 
-    windowTitle: "Reboot menu"
-    headerText: "Reboot"
+    windowTitle: "Logout menu"
+    headerText: "Logout"
 
     implicitWidth: buttonLayout.implicitWidth + horizontalPadding
 
@@ -25,8 +25,8 @@ MenuWindow {
 
             KeyNavigation.right: noBtn
             onClicked: {
-                GlobalStates.rebootMenuVisible = false;
-                ChangeSystemState.reboot();
+                GlobalStates.logoutMenuVisible = false;
+                ChangeSystemState.logout();
             }
         }
         CustomButton {
@@ -34,7 +34,7 @@ MenuWindow {
             text: qsTr("  No")
             KeyNavigation.left: yesBtn
             onClicked: {
-                GlobalStates.rebootMenuVisible = false;
+                GlobalStates.logoutMenuVisible = false;
             }
         }
     }
@@ -45,5 +45,5 @@ MenuWindow {
         }
     }
 
-    onRequestClose: GlobalStates.rebootMenuVisible = false
+    onRequestClose: GlobalStates.logoutMenuVisible = false
 }

@@ -15,4 +15,12 @@ Singleton {
     function toggleRebootMenu() {
         GlobalStates.rebootMenuVisible = !GlobalStates.rebootMenuVisible;
     }
+
+    function toggleSleepMenu() {
+        GlobalStates.sleepMenuVisible = !GlobalStates.sleepMenuVisible;
+    }
+
+    function toggleLogoutMenu() {
+        GlobalStates.logoutMenuVisible = !GlobalStates.logoutMenuVisible;
+    }
 }

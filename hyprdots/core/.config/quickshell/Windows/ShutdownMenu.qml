@@ -1,55 +1,23 @@
-import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
-import qs.Appearance
+import qs.Modules.Windows
 import qs.Modules.Common
-import qs.Modules.Shortcuts
 import qs.Services.QS.States
 import qs.Services.System
 
-FloatingWindow {
+MenuWindow {
     id: root
 
-    title: qsTr("Shutdown menu")
+    windowTitle: "Shutdown menu"
+    headerText: "Shutdown"
 
-    implicitWidth: buttonLayout.implicitWidth + 50
-    implicitHeight: 100
-
-    color: Theme.colors.bgMain
-
-    onVisibleChanged: {
-        if (visible) {
-            yesBtn.forceActiveFocus();
-        }
-    }
-
-    DefaultLabel {
-        id: windowTitle
-
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            top: parent.top
-        }
-        anchors {
-            topMargin: 10
-        }
-
-        text: qsTr("Shutdown")
-    }
+    implicitWidth: buttonLayout.implicitWidth + horizontalPadding
 
     RowLayout {
         id: buttonLayout
 
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            top: windowTitle.bottom
-        }
-        anchors {
-            topMargin: 10
-        }
-
-        spacing: 10
+        spacing: root.buttonSpacing
 
         CustomButton {
             id: yesBtn
@@ -58,7 +26,7 @@ FloatingWindow {
             KeyNavigation.right: noBtn
             onClicked: {
                 GlobalStates.shutdownMenuVisible = false;
-                ChangeSystemState.shutdown();
+                ChangeSystemState.sleep();
             }
         }
         CustomButton {
@@ -71,14 +39,11 @@ FloatingWindow {
         }
     }
 
-    // Controller Functions
-    onClosed: {
-        GlobalStates.shutdownMenuVisible = false;
-    }
-
-    EscapeShortcut {
-        onActivated: {
-            GlobalStates.shutdownMenuVisible = false;
+    onVisibleChanged: {
+        if (visible) {
+            yesBtn.forceActiveFocus();
         }
     }
+
+    onRequestClose: GlobalStates.shutdownMenuVisible = false
 }
