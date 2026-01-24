@@ -12,12 +12,12 @@ FloatingWindow {
     required property string headerText
 
     property int buttonSpacing: 18
-    property int horizontalPadding: 50
+    property int horizontalPadding: 40
 
     title: windowTitle
 
     // set implicitWidth in the actual window
-    implicitHeight: 100
+    implicitHeight: 85
 
     color: Theme.colors.bgMain
 
@@ -25,7 +25,7 @@ FloatingWindow {
         id: header
 
         anchors.top: parent.top
-        anchors.topMargin: 10
+        anchors.topMargin: 5
 
         anchors.horizontalCenter: parent.horizontalCenter
 

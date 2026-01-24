@@ -24,7 +24,7 @@ QtObject {
 
     property QtObject customButton: QtObject {
         property int height: 30
-        property int pointSize: 12
+        property int pointSize: 11
         property int paddingH: 25
         property int paddingV: 0
         property int radius: 6
@@ -33,7 +33,7 @@ QtObject {
     }
 
     property QtObject defaultLabel: QtObject {
-        property int pointSize: 16
+        property int pointSize: 14
     }
 
     // Function placeholder to apply a parsed theme
