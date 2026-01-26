@@ -3,7 +3,14 @@ import QtQuick
 
 import qs.Services.QS.States
 import qs.Windows
+import qs.Windows.Menu
 
+/*
+ * Scope InitizlizeWindowInstances
+ *
+ * Is designed to be used on quickshell launch via shell.qml
+ * Loads Bar{} immediately, other windows load on-demand with LazyLoader
+ */
 Scope {
     Bar {}
 

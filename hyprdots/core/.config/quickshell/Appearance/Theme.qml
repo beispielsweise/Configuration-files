@@ -2,6 +2,11 @@ pragma Singleton
 pragma ComponentBehavior: Bound
 import QtQuick
 
+/*!
+ *  QtObject Theme
+ *
+ *  Holds active theme-defined values
+ */
 QtObject {
     property QtObject font: QtObject {
         property string fontFamily: "Google Sans Flex"
@@ -31,7 +36,8 @@ QtObject {
         property int paddingV: 0
         property int radius: 6
         property int borderWidth: 1
-        property color borderColor: "#f9fcf7"
+        property int animationSpeed: 200
+        property int animationType: Easing.OutCubic
     }
 
     property QtObject defaultLabel: QtObject {

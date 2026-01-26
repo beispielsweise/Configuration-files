@@ -3,9 +3,20 @@ import QtQuick.Controls
 
 import qs.Appearance
 
+/*!
+ * Button CustomButton
+ *
+ * Reusable custom Button module
+ * Uses Theme-specific values
+ *
+ * To change text position from left to right, overwrite leftPadding or rightPadding
+ * Text is horizontally alligned by default, maybe this will need to be changed in the future
+ */
+
 Button {
     id: root
 
+    // Default properties
     property int maxWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
     focusPolicy: Qt.StrongFocus
@@ -35,9 +46,22 @@ Button {
         radius: Theme.customButton.radius
 
         border.width: root.hovered || root.activeFocus ? Theme.customButton.borderWidth + 1 : Theme.customButton.borderWidth
-        border.color: Theme.customButton.borderColor
+        Behavior on border.width {
+            NumberAnimation {
+                duration: Theme.customButton.animationSpeed
+                easing.type: Theme.customButton.animationType
+            }
+        }
+
+        border.color: Theme.colors.border
 
         color: root.down ? Theme.colors.bgDown : root.hovered || root.activeFocus ? Theme.colors.bgHovered : Theme.colors.bgActive
+        Behavior on color {
+            ColorAnimation {
+                duration: Theme.customButton.animationSpeed
+                easing.type: Theme.customButton.animationType
+            }
+        }
     }
 
     Keys.onPressed: ev => {

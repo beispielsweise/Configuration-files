@@ -7,6 +7,12 @@ import qs.Modules.Common
 import qs.Modules.Shortcuts
 import qs.Services.QS.States
 
+/*!
+ * FloatingWindow MenuWindow
+ *
+ * A custom window template that is used by LogoutMenu,RebootMenu,ScreenshotMenu,etc...
+ * Holds all important Theme-specific properties in one place
+ */
 FloatingWindow {
     id: root
 
@@ -57,12 +63,13 @@ FloatingWindow {
 
     onClosed: root.requestClose()
 
+    // Closes window on focus loss
     Connections {
         target: ToplevelManager
         function onActiveToplevelChanged() {
             const activeTopLevel = ToplevelManager.activeToplevel;
 
-            if (activeTopLevel.appId != GlobalStates.appId) {
+            if (activeTopLevel.appId != SystemInformaton.quickshellAppId) {
                 root.requestClose();
             }
         }

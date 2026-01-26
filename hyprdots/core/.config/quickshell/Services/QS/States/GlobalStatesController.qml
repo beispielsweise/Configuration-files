@@ -3,6 +3,11 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
 
+/*!
+ * Singleton GlobalStatesController
+ *
+ * Exposes GlobalStates toggles to quickshell internals
+ */
 Singleton {
     function toggleScreenshotMenu() {
         GlobalStates.screenshotMenuVisible = !GlobalStates.screenshotMenuVisible;

@@ -2,6 +2,12 @@ pragma Singleton
 import QtQuick
 import Quickshell
 
+/*!
+ * QtObject ChangeSystemState
+ *
+ * A service that changes global system state
+ */
+
 QtObject {
     function shutdown() {
         Quickshell.execDetached(["sh", "-c", "shutdown -h now"]);

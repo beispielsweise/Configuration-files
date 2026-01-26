@@ -12,9 +12,13 @@ __Window navigation__ Example implemented for ScreenshotWindow using Shortcut an
 
 ### Appearance
 
-#### Themes
+#### Colothemes
 
-Contains templates for themes, a feature to load those will be added later, when the palette and properties are defined
+Contains colortheme presets to be loaded into Theme.colors
+
+#### Presets
+
+Contains window settings / hyprland settings? / widget positions for bar etc
 
 #### Theme.qml
 
@@ -31,7 +35,7 @@ Responsible for loading and parsing .json themes (Template)
 Common reusable single elements (buttons, sliders, lables, etc)<br>
 Window-specific ones will be separated into subdirectories
 
-### Shortcuts
+#### Shortcuts
 
 Contains a reusable escape shortcut, probably wont be expanded
 
@@ -40,6 +44,10 @@ Contains a reusable escape shortcut, probably wont be expanded
 Contains templates for windows. Will contain pages for Settings window etc<br>
 Example: MenuWindow - a reusable parent component to Suspend/Logout/Sleep/... menus. 
 
+#### Widgets (TBD)
+
+#### Pages (TBD)
+ 
 ### Services
 
 ### QS
@@ -53,6 +61,7 @@ __InitializeWindowInstance__ Initiizes Bar instance(required for lazy loader to 
 
 #### States
 
+__SystemInformation__ holds system-state variables, readonlys etc
 __GlobalStates__ tracks current visibility stat of each window/component, as well as defines default visibility <br>
 __GlobalStatesController__ defines functions* that are changing data defined in __GlobalStates__. They are normally exposed to the user and are reused in IPCRouter.qml <br>
 

@@ -3,6 +3,12 @@ import Quickshell.Io
 
 import qs.Services.QS.States
 
+/*!
+ * Item IPCRouter
+ *
+ * Provides access to IPCHandler functions via
+ * qs ipc call <target> <function>
+ */
 Item {
     IpcHandler {
         target: "screenshotMenu"

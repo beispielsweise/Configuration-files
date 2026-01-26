@@ -3,9 +3,13 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
 
+/*!
+ * Singleton GlobalStates
+ *
+ * Holds current window visibility states
+ */
 Singleton {
-    readonly property string appId: "org.quickshell"
-
+    property bool barVisible: false                     // should be set to true by default
     property bool screenshotMenuVisible: false
     property bool monitorSetupMenuVisible: false
     property bool shutdownMenuVisible: false
