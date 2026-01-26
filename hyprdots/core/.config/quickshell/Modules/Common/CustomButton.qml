@@ -19,7 +19,8 @@ Button {
     implicitWidth: maxWidth
 
     font.pointSize: Theme.customButton.pointSize
-    font.family: Theme.fontFamily
+    font.family: Theme.font.fontFamily
+    font.weight: Font.Medium
 
     contentItem: Label {
         text: root.text

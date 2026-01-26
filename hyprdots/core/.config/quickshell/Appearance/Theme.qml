@@ -3,7 +3,9 @@ pragma ComponentBehavior: Bound
 import QtQuick
 
 QtObject {
-    property string fontFamily: "Google Sans Flex"
+    property QtObject font: QtObject {
+        property string fontFamily: "Google Sans Flex"
+    }
 
     property QtObject colors: QtObject {
         property color bgMain: "#080808"

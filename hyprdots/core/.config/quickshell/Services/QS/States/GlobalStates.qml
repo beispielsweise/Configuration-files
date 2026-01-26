@@ -4,6 +4,8 @@ import QtQuick
 import Quickshell
 
 Singleton {
+    readonly property string appId: "org.quickshell"
+
     property bool screenshotMenuVisible: false
     property bool monitorSetupMenuVisible: false
     property bool shutdownMenuVisible: false

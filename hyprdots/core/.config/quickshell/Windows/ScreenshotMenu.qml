@@ -13,6 +13,7 @@ MenuWindow {
     headerText: "Screenshot"
 
     implicitWidth: buttonLayout.implicitWidth + horizontalPadding
+    implicitHeight: labelHeight + buttonLayout.implicitHeight * 2
 
     RowLayout {
         id: buttonLayout

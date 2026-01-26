@@ -1,9 +1,11 @@
 import Quickshell
 import QtQuick
+import Quickshell.Wayland
 
 import qs.Appearance
 import qs.Modules.Common
 import qs.Modules.Shortcuts
+import qs.Services.QS.States
 
 FloatingWindow {
     id: root
@@ -13,11 +15,9 @@ FloatingWindow {
 
     property int buttonSpacing: 18
     property int horizontalPadding: 40
+    property int labelHeight: header.implicitHeight
 
     title: windowTitle
-
-    // set implicitWidth in the actual window
-    implicitHeight: 85
 
     color: Theme.colors.bgMain
 
@@ -56,4 +56,15 @@ FloatingWindow {
     }
 
     onClosed: root.requestClose()
+
+    Connections {
+        target: ToplevelManager
+        function onActiveToplevelChanged() {
+            const activeTopLevel = ToplevelManager.activeToplevel;
+
+            if (activeTopLevel.appId != GlobalStates.appId) {
+                root.requestClose();
+            }
+        }
+    }
 }

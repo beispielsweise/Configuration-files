@@ -6,7 +6,8 @@ Text {
     id: root
 
     font.pointSize: Theme.defaultLabel.pointSize
-    font.family: Theme.fontFamily
+    font.family: Theme.font.fontFamily
+    font.weight: Font.DemiBold
 
     color: Theme.colors.text
 }
