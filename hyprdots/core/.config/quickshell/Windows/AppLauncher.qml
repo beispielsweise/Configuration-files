@@ -11,178 +11,172 @@ import qs.Services.System
 /*!
  * FloatingWindow AppLauncher
  *
- * A window that loads a custom appLauhcer and I have my life even more now
+ * A window that loads a custom app launcher with Theme-specific properties
+ * Includes Delegate and Model usage examples
  */
 FloatingWindow {
     id: root
     title: "App launcher"
 
-    implicitWidth: 500
+    implicitWidth: Theme.appLauncher.windowWidth
     implicitHeight: content.implicitHeight + Theme.appLauncher.windowMargins * 2
-
     color: Theme.colors.bgMain
 
-    // Filler item to set anchors so that compiler doesn't curse
-    Item {
+    Column {
+        id: content
         anchors.fill: parent
-        anchors.topMargin: Theme.appLauncher.windowMargins
-        anchors.rightMargin: Theme.appLauncher.windowMargins
-        anchors.bottomMargin: Theme.appLauncher.windowMargins
-        anchors.leftMargin: Theme.appLauncher.windowMargins
+        anchors.margins: Theme.appLauncher.windowMargins
+        spacing: Theme.appLauncher.mainGap
 
-        Column {
-            id: content
+        TextField {
+            id: inputField
             width: parent.width
-            spacing: 15
 
-            // Custom input field. Fully dependant on Theme.qml
-            TextField {
-                id: inputField
+            placeholderText: "Search"
+            placeholderTextColor: Theme.colors.textMuted
 
-                implicitWidth: parent.width
+            font.pointSize: Theme.appLauncher.pointSizeBig
+            font.family: Theme.font.fontFamily
+            font.weight: Theme.font.extraWeight
 
-                placeholderText: "Search"
-                placeholderTextColor: Theme.colors.textMuted
-                font.pointSize: Theme.appLauncher.pointSizeBig
-                font.family: Theme.font.fontFamily
-                font.weight: Theme.font.extraWeight
+            leftPadding: Theme.appLauncher.paddingH
+            topPadding: Theme.appLauncher.paddingV
+            bottomPadding: Theme.appLauncher.paddingV
 
-                leftPadding: Theme.appLauncher.paddingH
-                topPadding: Theme.appLauncher.paddingV
-                bottomPadding: Theme.appLauncher.paddingV
+            color: Theme.colors.text
 
-                color: Theme.colors.text
-
-                background: Rectangle {
-                    radius: Theme.appLauncher.radius
-                    border.width: Theme.appLauncher.borderWidth
-                    border.color: Theme.colors.border
-                    color: Theme.colors.bgActive
-                }
-
-                onTextChanged: {
-                    AppLauncherService.refilter(text);
-
-                    appList.currentIndex = AppLauncherService.appsModel.count > 0 ? 0 : -1;
-
-                    if (appList.currentIndex >= 0)
-                        appList.positionViewAtIndex(0, ListView.Beginning);
-                }
+            background: Rectangle {
+                radius: Theme.appLauncher.radius
+                border.width: Theme.appLauncher.borderWidth
+                border.color: Theme.colors.border
+                color: Theme.colors.bgActive
             }
 
-            ListView {
-                id: appList
-                implicitWidth: parent.width
-                implicitHeight: Math.min(AppLauncherService.appsModel.count, Theme.appLauncher.maxVisibleRows) * Theme.appLauncher.rowHeight
-                clip: true
+            onTextChanged: {
+                AppLauncherService.refilter(text);
 
-                Component.onCompleted: {
-                    AppLauncherService.loadCacheFile();
+                appList.currentIndex = AppLauncherService.appsModel.count > 0 ? 0 : -1;
+                if (appList.currentIndex >= 0)
+                    appList.positionViewAtIndex(0, ListView.Beginning);
+            }
+        }
+
+        ListView {
+            id: appList
+            width: parent.width
+            implicitHeight: Theme.appLauncher.maxVisibleRows * Theme.appLauncher.rowHeight
+            clip: true
+
+            model: AppLauncherService.appsModel
+            delegate: appRowDelegate
+
+            currentIndex: model.count > 0 ? 0 : -1
+            highlight: Rectangle {
+                radius: Theme.appLauncher.radius
+                color: Theme.colors.bgActive
+            }
+            highlightMoveDuration: Theme.appLauncher.highlightMoveDuration
+        }
+
+        Component {
+            id: appRowDelegate
+            Rectangle {
+                id: appItem
+                width: ListView.view.width
+                height: Theme.appLauncher.rowHeight
+                radius: Theme.appLauncher.radius
+                color: "transparent"
+
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+
+                    onEntered: appList.currentIndex = index
+                    onClicked: {
+                        AppLauncherService.launch(index);
+                        Qt.callLater(root.requestClose);
+                    }
                 }
-                model: AppLauncherService.appsModel
-                currentIndex: model.count > 0 ? 0 : -1
 
-                highlight: Rectangle {
-                    radius: Theme.appLauncher.radius
-                    color: Theme.colors.bgActive
-                }
-                highlightMoveDuration: 90
+                Row {
+                    id: row
+                    anchors.fill: parent
+                    anchors.leftMargin: Theme.appLauncher.paddingH
+                    anchors.rightMargin: Theme.appLauncher.paddingH
+                    spacing: Theme.appLauncher.appRowSpacing
 
-                delegate: Rectangle {
-                    id: appItem
-                    width: ListView.view.width
-                    height: Theme.appLauncher.rowHeight
+                    Image {
+                        width: Theme.appLauncher.iconSize
+                        height: Theme.appLauncher.iconSize
+                        anchors.verticalCenter: parent.verticalCenter
 
-                    color: "transparent"
-                    radius: Theme.appLauncher.radius
+                        source: icon
+                        fillMode: Image.PreserveAspectFit
+                        asynchronous: true
+                        smooth: true
+                    }
 
-                    MouseArea {
-                        anchors.fill: parent
-                        hoverEnabled: true
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: name
 
-                        onEntered: appList.currentIndex = index
-                        onClicked: AppLauncherService.activate(index)
+                        font.pointSize: Theme.appLauncher.pointSizeMedium
+                        font.family: Theme.font.fontFamily
+                        font.weight: Theme.font.defaultWeight
 
-                        Row {
-                            id: appItemConent
-                            anchors.fill: parent
-                            anchors.margins: appItemConent.implicitHeight / 2
+                        color: Theme.colors.text
+                        elide: Text.ElideRight
+                    }
 
-                            spacing: Theme.appLauncher.appRowSpacing
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: comment
 
-                            Image {
-                                width: Theme.appLauncher.iconSize
-                                height: Theme.appLauncher.iconSize
-                                source: "image://theme/" + icon
-                                fillMode: Image.PreserveAspectFit
-                                asynchronous: true
-                                smooth: true
-                            }
+                        font.pointSize: Theme.appLauncher.pointSizeSmall
+                        font.family: Theme.font.fontFamily
+                        font.weight: Theme.font.defaultWeight
 
-                            Text {
-                                id: appName
-
-                                text: name
-                                font.pointSize: Theme.appLauncher.pointSizeMedium
-                                font.family: Theme.font.fontFamily
-                                font.weight: Theme.font.defaultWeight
-
-                                color: Theme.colors.text
-
-                                verticalAlignment: Text.AlignVCenter
-                            }
-
-                            Text {
-                                id: appComment
-
-                                text: comment
-                                font.pointSize: Theme.appLauncher.pointSizeSmall
-                                font.family: Theme.font.fontFamily
-                                font.weight: Theme.font.defaultWeight
-
-                                // italic
-                                color: Theme.colors.textMuted
-
-                                verticalAlignment: Text.AlignVCenter
-                            }
-                        }
+                        color: Theme.colors.textMuted
+                        elide: Text.ElideRight
                     }
                 }
             }
-            Keys.onPressed: e => {
-                const count = AppLauncherService.appsModel.count;
-                if (count <= 0)
-                    return;
+        }
 
-                if (e.key === Qt.Key_Tab || e.key === Qt.Key_Down) {
-                    appList.currentIndex = (appList.currentIndex + 1) % count;
-                    appList.positionViewAtIndex(appList.currentIndex, ListView.Visible);
-                    e.accepted = true;
-                    return;
-                }
+        Keys.onPressed: e => {
+            const count = AppLauncherService.appsModel.count;
+            if (count <= 0)
+                return;
 
-                if (e.key === Qt.Key_Up) {
-                    appList.currentIndex = (appList.currentIndex - 1 + count) % count;
-                    appList.positionViewAtIndex(appList.currentIndex, ListView.Visible);
-                    e.accepted = true;
-                    return;
-                }
+            if (e.key === Qt.Key_Tab || e.key === Qt.Key_Down) {
+                appList.currentIndex = (appList.currentIndex + 1) % count;
+                appList.positionViewAtIndex(appList.currentIndex, ListView.End);
+                e.accepted = true;
+                return;
+            }
 
-                if (e.key === Qt.Key_Enter) {
-                    AppLauncherService.activate(appList.currentIndex);
-                    e.accepted = true;
-                    return;
+            if (e.key === Qt.Key_Up) {
+                appList.currentIndex = (appList.currentIndex - 1 + count) % count;
+                appList.positionViewAtIndex(appList.currentIndex, ListView.Beginning);
+                e.accepted = true;
+                return;
+            }
+
+            onAccepted: {
+                const idx = appList.currentIndex;
+                if (idx >= 0) {
+                    AppLauncherService.launch(idx);
+                    Qt.callLater(root.requestClose);
                 }
             }
         }
     }
 
-    // ----------------------------------------------
+    // -----------------------------------------------
 
     onVisibleChanged: {
-        if (visible) {
+        if (visible)
             inputField.forceActiveFocus();
-        }
     }
 
     function requestClose() {
@@ -199,8 +193,7 @@ FloatingWindow {
         target: ToplevelManager
         function onActiveToplevelChanged() {
             const activeTopLevel = ToplevelManager.activeToplevel;
-
-            if (activeTopLevel.appId != SystemInformaton.quickshellAppId && Theme.appLauncher.closeOnFocusLoss) {
+            if (activeTopLevel.appId !== SystemInformaton.quickshellAppId && Theme.appLauncher.closeOnFocusLoss) {
                 root.requestClose();
             }
         }

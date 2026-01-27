@@ -1,19 +1,16 @@
 #!/bin/bash
+# Screenshot capturing logic
 
-# Screenshot output directory
 DIR="${HOME}/Pictures/Screenshots"
 mkdir -p "$DIR"
 
-# Notification icon
 ICON="camera-photo"  # or use a path like "$HOME/.icons/screenshot.png"
 
-# Timestamped filename
 TIME=$(date "+%Y-%m-%d_%H-%M-%S")
 FILE="${DIR}/screenshot_${TIME}.jpg"
 
 SLEEP_THRESHOLD="0.3"
 
-# Notify helpers
 notify_success() {
   notify-send -t 2000 -u normal -i "$ICON" "Screenshot" "Saved to ~/Pictures/Screenshots"
 }

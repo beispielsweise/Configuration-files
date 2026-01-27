@@ -9,50 +9,57 @@ import qs.Windows.Menu
  * Scope InitizlizeWindowInstances
  *
  * Is designed to be used on quickshell launch via shell.qml
- * Loads Bar{} immediately, other windows load on-demand with LazyLoader
+ * Loads Bar{} immediately, other windows load on-demand with Loader
  */
 Scope {
     Bar {}
 
-    LazyLoader {
+    Loader {
         id: appLauncher
-        activeAsync: GlobalStates.appLauncherVisible
-        component: AppLauncher {}
+        active: GlobalStates.appLauncherVisible
+        asynchronous: true
+        sourceComponent: AppLauncher {}
     }
 
-    LazyLoader {
+    Loader {
         id: screenshotMenuLoader
-        activeAsync: GlobalStates.screenshotMenuVisible
-        component: ScreenshotMenu {}
+        active: GlobalStates.screenshotMenuVisible
+        asynchronous: true
+        sourceComponent: ScreenshotMenu {}
     }
 
-    LazyLoader {
+    Loader {
         id: monitorSetupMenuLoader
-        activeAsync: GlobalStates.monitorSetupMenuVisible
-        component: MonitorSetupMenu {}
+        active: GlobalStates.monitorSetupMenuVisible
+        asynchronous: true
+        sourceComponent: MonitorSetupMenu {}
     }
 
-    LazyLoader {
+    Loader {
         id: shutdownMenuLoader
-        activeAsync: GlobalStates.shutdownMenuVisible
-        component: ShutdownMenu {}
+        active: GlobalStates.shutdownMenuVisible
+        asynchronous: true
+        sourceComponent: ShutdownMenu {}
     }
 
-    LazyLoader {
+    Loader {
         id: rebootMenuLoader
-        activeAsync: GlobalStates.rebootMenuVisible
-        component: RebootMenu {}
+        active: GlobalStates.rebootMenuVisible
+        asynchronous: true
+        sourceComponent: RebootMenu {}
     }
 
-    LazyLoader {
+    Loader {
         id: sleepMenuLoader
-        activeAsync: GlobalStates.sleepMenuVisible
-        component: SleepMenu {}
+        active: GlobalStates.sleepMenuVisible
+        asynchronous: true
+        sourceComponent: SleepMenu {}
     }
 
-    LazyLoader {
+    Loader {
         id: logoutMenuLoader
-        activeAsync: GlobalStates.logoutMenuVisible
-        component: LogoutMenu {}
+        active: GlobalStates.logoutMenuVisible
+        asynchronous: true
+        sourceComponent: LogoutMenu {}
     }
 }

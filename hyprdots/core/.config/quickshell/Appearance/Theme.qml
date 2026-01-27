@@ -33,19 +33,22 @@ QtObject {
 
     property QtObject appLauncher: QtObject {
         property bool closeOnFocusLoss: false
+        property int windowWidth: 500
         property int windowMargins: 10
         property int pointSizeBig: 13
         property int pointSizeMedium: 11
         property int pointSizeSmall: 10
-        property int paddingH: 20
-        property int paddingV: 12
-        property int radius: 19
+        property int paddingH: 20                       // content padding from left/right, like: | <padding> active
+        property int paddingV: 12                       // content padding from top/bottom
+        property int radius: 19                         // universal
         property int borderWidth: 1
         property int iconSize: 25
         property int iconRadius: 5
-        property int rowHeight: 44
+        property int mainGap: 15                        // gap between inputField and List items
+        property int rowHeight: 44                      // single list item height
         property int maxVisibleRows: 8
-        property int appRowSpacing: 20
+        property int appRowSpacing: 20                  // gap between each list item
+        property int highlightMoveDuration: 90
     }
 
     property QtObject customButton: QtObject {
