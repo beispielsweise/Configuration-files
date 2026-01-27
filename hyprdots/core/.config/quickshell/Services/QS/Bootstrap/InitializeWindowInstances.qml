@@ -15,6 +15,12 @@ Scope {
     Bar {}
 
     LazyLoader {
+        id: appLauncher
+        activeAsync: GlobalStates.appLauncherVisible
+        component: AppLauncher {}
+    }
+
+    LazyLoader {
         id: screenshotMenuLoader
         activeAsync: GlobalStates.screenshotMenuVisible
         component: ScreenshotMenu {}

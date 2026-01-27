@@ -19,6 +19,8 @@ FloatingWindow {
     required property string windowTitle
     required property string headerText
 
+    property bool closeOnFocusLoss: true
+
     property int buttonSpacing: 18
     property int horizontalPadding: 40
     property int labelHeight: header.implicitHeight
@@ -69,7 +71,7 @@ FloatingWindow {
         function onActiveToplevelChanged() {
             const activeTopLevel = ToplevelManager.activeToplevel;
 
-            if (activeTopLevel.appId != SystemInformaton.quickshellAppId) {
+            if (activeTopLevel.appId != SystemInformaton.quickshellAppId && root.closeOnFocusLoss) {
                 root.requestClose();
             }
         }

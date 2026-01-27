@@ -11,6 +11,14 @@ import qs.Services.QS.States
  */
 Item {
     IpcHandler {
+        target: "appLauncher"
+
+        function toggle() {
+            GlobalStatesController.toggleAppLauncher();
+        }
+    }
+
+    IpcHandler {
         target: "screenshotMenu"
 
         function toggle() {

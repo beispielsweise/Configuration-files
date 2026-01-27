@@ -44,6 +44,14 @@ QtObject {
         property int pointSize: 14
     }
 
+    property QtObject appLauncher: QtObject {
+        property int pointSize: 11
+        property int paddingH: 20
+        property int paddingV: 12
+        property int radius: 20
+        property int borderWidth: 1
+    }
+
     // Function placeholder to apply a parsed theme
     function apply(themeObj) {
     }

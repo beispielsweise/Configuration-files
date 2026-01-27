@@ -10,6 +10,7 @@ import Quickshell
  */
 Singleton {
     property bool barVisible: false                     // should be set to true by default
+    property bool appLauncherVisible: false
     property bool screenshotMenuVisible: false
     property bool monitorSetupMenuVisible: false
     property bool shutdownMenuVisible: false
