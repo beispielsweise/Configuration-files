@@ -6,6 +6,7 @@ import Quickshell.Wayland
 import qs.Appearance
 import qs.Modules.Shortcuts
 import qs.Services.QS.States
+import qs.Services.System
 
 /*!
  * FloatingWindow AppLauncher
@@ -16,24 +17,18 @@ FloatingWindow {
     id: root
     title: "App launcher"
 
-    property bool closeOnFocusLoss: false
-
-    property int windowMargins: 10
-    property int rowHeigt: 44
-    property int maxVisibleRows: 8
-
     implicitWidth: 500
-    implicitHeight: content.implicitHeight + windowMargins * 2
+    implicitHeight: content.implicitHeight + Theme.appLauncher.windowMargins * 2
 
     color: Theme.colors.bgMain
 
     // Filler item to set anchors so that compiler doesn't curse
     Item {
         anchors.fill: parent
-        anchors.topMargin: root.windowMargins
-        anchors.rightMargin: root.windowMargins
-        anchors.bottomMargin: root.windowMargins
-        anchors.leftMargin: root.windowMargins
+        anchors.topMargin: Theme.appLauncher.windowMargins
+        anchors.rightMargin: Theme.appLauncher.windowMargins
+        anchors.bottomMargin: Theme.appLauncher.windowMargins
+        anchors.leftMargin: Theme.appLauncher.windowMargins
 
         Column {
             id: content
@@ -48,7 +43,9 @@ FloatingWindow {
 
                 placeholderText: "Search"
                 placeholderTextColor: Theme.colors.textMuted
-                font.pointSize: Theme.appLauncher.pointSize
+                font.pointSize: Theme.appLauncher.pointSizeBig
+                font.family: Theme.font.fontFamily
+                font.weight: Theme.font.extraWeight
 
                 leftPadding: Theme.appLauncher.paddingH
                 topPadding: Theme.appLauncher.paddingV
@@ -62,79 +59,121 @@ FloatingWindow {
                     border.color: Theme.colors.border
                     color: Theme.colors.bgActive
                 }
+
+                onTextChanged: {
+                    AppLauncherService.refilter(text);
+
+                    appList.currentIndex = AppLauncherService.appsModel.count > 0 ? 0 : -1;
+
+                    if (appList.currentIndex >= 0)
+                        appList.positionViewAtIndex(0, ListView.Beginning);
+                }
             }
 
             ListView {
                 id: appList
                 implicitWidth: parent.width
-                implicitHeight: 3 * (root.rowHeigt)   // ????? 3 hardcode
+                implicitHeight: Math.min(AppLauncherService.appsModel.count, Theme.appLauncher.maxVisibleRows) * Theme.appLauncher.rowHeight
+                clip: true
 
-                model: appsModel
-                // clip: true
+                Component.onCompleted: {
+                    AppLauncherService.loadCacheFile();
+                }
+                model: AppLauncherService.appsModel
+                currentIndex: model.count > 0 ? 0 : -1
+
+                highlight: Rectangle {
+                    radius: Theme.appLauncher.radius
+                    color: Theme.colors.bgActive
+                }
+                highlightMoveDuration: 90
 
                 delegate: Rectangle {
                     id: appItem
                     width: ListView.view.width
-                    height: root.rowHeigt
+                    height: Theme.appLauncher.rowHeight
 
-                    color: Theme.colors.bgActive // This bullshit is hardcoded, needs to be overwritten on appList step up-down, it doesnt have states like.down or .hovered
+                    color: "transparent"
                     radius: Theme.appLauncher.radius
 
-                    Row {
+                    MouseArea {
                         anchors.fill: parent
-                        anchors.margins: 12
+                        hoverEnabled: true
 
-                        leftPadding: Theme.appLauncher.paddingH + 5
+                        onEntered: appList.currentIndex = index
+                        onClicked: AppLauncherService.activate(index)
 
-                        spacing: 20         // AGAIN HARDCODED AAAAAAA
+                        Row {
+                            id: appItemConent
+                            anchors.fill: parent
+                            anchors.margins: appItemConent.implicitHeight / 2
 
-                        Rectangle {
-                            id: icon
+                            spacing: Theme.appLauncher.appRowSpacing
 
-                            // Hardcode my aaaah
-                            width: 24
-                            height: 24
-                            radius: 6
-                            color: Theme.colors.bgHovered
-                        }
+                            Image {
+                                width: Theme.appLauncher.iconSize
+                                height: Theme.appLauncher.iconSize
+                                source: "image://theme/" + icon
+                                fillMode: Image.PreserveAspectFit
+                                asynchronous: true
+                                smooth: true
+                            }
 
-                        Text {
-                            id: appName
+                            Text {
+                                id: appName
 
-                            text: name
-                            color: Theme.colors.text
-                        }
+                                text: name
+                                font.pointSize: Theme.appLauncher.pointSizeMedium
+                                font.family: Theme.font.fontFamily
+                                font.weight: Theme.font.defaultWeight
 
-                        Text {
-                            id: appComment
+                                color: Theme.colors.text
 
-                            text: comment
-                            color: Theme.colors.textMuted
-                            font.pixelSize: 11
+                                verticalAlignment: Text.AlignVCenter
+                            }
+
+                            Text {
+                                id: appComment
+
+                                text: comment
+                                font.pointSize: Theme.appLauncher.pointSizeSmall
+                                font.family: Theme.font.fontFamily
+                                font.weight: Theme.font.defaultWeight
+
+                                // italic
+                                color: Theme.colors.textMuted
+
+                                verticalAlignment: Text.AlignVCenter
+                            }
                         }
                     }
                 }
             }
-        }
-    }
+            Keys.onPressed: e => {
+                const count = AppLauncherService.appsModel.count;
+                if (count <= 0)
+                    return;
 
-    // Placeholder model to fill with applications
-    ListModel {
-        id: appsModel
-        ListElement {
-            name: "Firefox"
-            comment: "Web Browser"
-            icon: "firefox"
-        }
-        ListElement {
-            name: "Filewall"
-            comment: "Firewall UI"
-            icon: "security-high"
-        }
-        ListElement {
-            name: "Discord"
-            comment: "Messenger"
-            icon: "discord"
+                if (e.key === Qt.Key_Tab || e.key === Qt.Key_Down) {
+                    appList.currentIndex = (appList.currentIndex + 1) % count;
+                    appList.positionViewAtIndex(appList.currentIndex, ListView.Visible);
+                    e.accepted = true;
+                    return;
+                }
+
+                if (e.key === Qt.Key_Up) {
+                    appList.currentIndex = (appList.currentIndex - 1 + count) % count;
+                    appList.positionViewAtIndex(appList.currentIndex, ListView.Visible);
+                    e.accepted = true;
+                    return;
+                }
+
+                if (e.key === Qt.Key_Enter) {
+                    AppLauncherService.activate(appList.currentIndex);
+                    e.accepted = true;
+                    return;
+                }
+            }
         }
     }
 
@@ -161,7 +200,7 @@ FloatingWindow {
         function onActiveToplevelChanged() {
             const activeTopLevel = ToplevelManager.activeToplevel;
 
-            if (activeTopLevel.appId != SystemInformaton.quickshellAppId && root.closeOnFocusLoss) {
+            if (activeTopLevel.appId != SystemInformaton.quickshellAppId && Theme.appLauncher.closeOnFocusLoss) {
                 root.requestClose();
             }
         }

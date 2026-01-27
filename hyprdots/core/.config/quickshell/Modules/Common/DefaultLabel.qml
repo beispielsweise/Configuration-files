@@ -12,7 +12,7 @@ Text {
 
     font.pointSize: Theme.defaultLabel.pointSize
     font.family: Theme.font.fontFamily
-    font.weight: Font.DemiBold
+    font.weight: Theme.font.extraWeight
 
     color: Theme.colors.text
 }

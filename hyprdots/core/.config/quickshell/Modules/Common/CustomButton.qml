@@ -31,7 +31,7 @@ Button {
 
     font.pointSize: Theme.customButton.pointSize
     font.family: Theme.font.fontFamily
-    font.weight: Font.Medium
+    font.weight: Theme.font.extraWeight
 
     contentItem: Label {
         text: root.text

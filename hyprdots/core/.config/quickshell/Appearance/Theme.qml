@@ -10,6 +10,8 @@ import QtQuick
 QtObject {
     property QtObject font: QtObject {
         property string fontFamily: "Google Sans Flex"
+        property int defaultWeight: Font.Medium
+        property int extraWeight: Font.DemiBold
     }
 
     property QtObject colors: QtObject {
@@ -18,7 +20,7 @@ QtObject {
         property color bgDown: "#1b1b1b"
         property color bgHovered: "#424242"
         property color text: "#f1f1f1"
-        property color textMuted: "#dcdcdc"
+        property color textMuted: "#494949"
         property color border: "#f9fcf7"
     }
 
@@ -27,6 +29,23 @@ QtObject {
         property int radius: 7
         property int gapIn: 0
         property int gapOut: 0
+    }
+
+    property QtObject appLauncher: QtObject {
+        property bool closeOnFocusLoss: false
+        property int windowMargins: 10
+        property int pointSizeBig: 13
+        property int pointSizeMedium: 11
+        property int pointSizeSmall: 10
+        property int paddingH: 20
+        property int paddingV: 12
+        property int radius: 19
+        property int borderWidth: 1
+        property int iconSize: 25
+        property int iconRadius: 5
+        property int rowHeight: 44
+        property int maxVisibleRows: 8
+        property int appRowSpacing: 20
     }
 
     property QtObject customButton: QtObject {
@@ -42,14 +61,6 @@ QtObject {
 
     property QtObject defaultLabel: QtObject {
         property int pointSize: 14
-    }
-
-    property QtObject appLauncher: QtObject {
-        property int pointSize: 11
-        property int paddingH: 20
-        property int paddingV: 12
-        property int radius: 20
-        property int borderWidth: 1
     }
 
     // Function placeholder to apply a parsed theme
