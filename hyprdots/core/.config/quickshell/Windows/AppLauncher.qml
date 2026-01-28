@@ -52,7 +52,9 @@ FloatingWindow {
                 color: Theme.colors.bgActive
             }
 
-            onTextChanged: {
+            onTextChanged: updateListView(inputField.text)
+
+            function updateListView(text) {
                 AppLauncherService.refilter(text);
 
                 appList.currentIndex = AppLauncherService.appsModel.count > 0 ? 0 : -1;
@@ -150,14 +152,14 @@ FloatingWindow {
 
             if (e.key === Qt.Key_Tab || e.key === Qt.Key_Down) {
                 appList.currentIndex = (appList.currentIndex + 1) % count;
-                appList.positionViewAtIndex(appList.currentIndex, ListView.End);
+                appList.positionViewAtIndex(appList.currentIndex, ListView.Contain);
                 e.accepted = true;
                 return;
             }
 
             if (e.key === Qt.Key_Up) {
-                appList.currentIndex = (appList.currentIndex - 1 + count) % count;
-                appList.positionViewAtIndex(appList.currentIndex, ListView.Beginning);
+                appList.currentIndex = (appList.currentIndex - 1) % count;
+                appList.positionViewAtIndex(appList.currentIndex, ListView.Contain);
                 e.accepted = true;
                 return;
             }
@@ -174,12 +176,18 @@ FloatingWindow {
 
     // -----------------------------------------------
 
+    Component.onCompleted: {
+        inputField.updateListView("");
+        AppLauncherService.loadCacheFile();
+    }
+
     onVisibleChanged: {
         if (visible)
             inputField.forceActiveFocus();
     }
 
     function requestClose() {
+        Qt.callLater(() => AppLauncherService.createCacheFile());
         GlobalStates.appLauncherVisible = false;
     }
 

@@ -11,6 +11,6 @@ bat="$(ls -d /sys/class/power_supply/BAT* 2>/dev/null | head -n1)"
 if [[ -n "$bat" ]]; then
   echo "  Battery: $(cat "$bat/capacity")% • $(cat "$bat/status")"
 else
-  echo "  Battery: keine erkannt"
+  echo "  Battery: not detected"
 fi
 echo

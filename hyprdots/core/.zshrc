@@ -103,8 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export TERMINAL=/usr/bin/alacritty
-
 # Essentials
 alias ll='ls -alF'
 alias la='ls -A'
@@ -135,4 +133,8 @@ alias qsdirex="cd ~/Configuration-files-experimental/hyprdots/core/.config/quick
 alias syncfolder="rclone sync ~/Syncfolder THL_Notizen_GoogleDrive:Syncfolder \
   --filter-from ~/.config/rclone/filters.txt --progress"
 
-./.config/hypr/scripts/ShowTTYLoginInfo.sh
+
+"$HOME/.config/hypr/scripts/ShowTTYLoginInfo.sh"
+
+[[ -o interactive ]] && cd "$HOME"
+

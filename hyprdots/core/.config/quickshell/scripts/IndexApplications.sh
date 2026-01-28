@@ -23,7 +23,15 @@ jesc() {
 # fml
 createIconPath() {
   local icon="$1"
-  local base="/usr/share/icons/hicolor"
+
+
+
+  local -a bases=(
+    "/usr/share/icons/hicolor"
+    "/usr/local/share/icons/hicolor"
+    "$HOME/.local/share/icons/hicolor"
+    "/usr/share/pixmaps"
+  )
 
   local -a dirs=(
     "scalable/apps"
@@ -42,18 +50,27 @@ createIconPath() {
     "24x24/apps"
     "22x22/apps"
     "16x16/apps"
+    ""
   )
 
-  local d p
+  local base d p
 
-  for d in "${dirs[@]}"; do
-    p="$base/$d/$icon.svg"
-    [[ -f "$p" ]] && { printf '%s' "$p"; return 0; }
-  done
+  for base in "${bases[@]}"; do
+    for d in "${dirs[@]}"; do
+      p="$base/$d/$icon.svg"
+      if [[ -f "$p" ]]; then
+        printf '%s' "$p"
+        return 0
+      fi
+    done
 
-  for d in "${dirs[@]}"; do
-    p="$base/$d/$icon.png"
-    [[ -f "$p" ]] && { printf '%s' "$p"; return 0; }
+    for d in "${dirs[@]}"; do
+      p="$base/$d/$icon.png"
+      if [[ -f "$p" ]]; then
+        printf '%s' "$p"
+        return 0
+      fi
+    done
   done
 
   printf ''
@@ -140,3 +157,4 @@ createIconPath() {
 } > "$TMP_FILE"
 
 mv "$TMP_FILE" "$CACHE_FILE"
+
