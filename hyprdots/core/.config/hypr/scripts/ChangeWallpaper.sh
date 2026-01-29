@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALL_DIR="$HOME/.config/swww"
+WALL_DIR="$HOME/Wallpapers"
 CURRENT="$HOME/.cache/swww/current_wallpaper"
 TRANSITION="grow"
 DURATION="0.8"

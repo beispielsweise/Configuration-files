@@ -34,7 +34,7 @@ Now you need to choose which host-specific setup you will need:<br>
 ### Quickshell 
 
 Install quickshell ```sudo pacman -S quickshell``` or use ```yay -S quickshell-git```
-[Quickshell Guide](https://github.com/beispielsweise/configs/blob/experimental/hyprdots/core/.config/quickshell/README.md)<br>
+[Quickshell Guide](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/quickshell/README.md)<br>
 Installed ```Google Sans Flex```, using it for everything
 
 ### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/nvim/README.md):

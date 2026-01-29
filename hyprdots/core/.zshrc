@@ -134,7 +134,7 @@ alias syncfolder="rclone sync ~/Syncfolder THL_Notizen_GoogleDrive:Syncfolder \
   --filter-from ~/.config/rclone/filters.txt --progress"
 
 
-"$HOME/.config/hypr/scripts/ShowTTYLoginInfo.sh"
+"$HOME/.config/hypr/scripts/LaunchHyprland.sh"
 
-[[ -o interactive ]] && cd "$HOME"
+# [[ -o interactive ]] && cd "$HOME"
 

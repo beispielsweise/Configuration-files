@@ -18,7 +18,7 @@ QtObject {
     }
 
     function sleep() {
-        Quickshell.execDetached(["sh", "-c", "systemctl suspend"]);
+        Quickshell.execDetached(["sh", "-c", "systemctl hibernate"]);
     }
 
     function logout() {
