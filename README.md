@@ -33,14 +33,9 @@ Now you need to choose which host-specific setup you will need:<br>
 
 ### Quickshell 
 
-This branch contains experimental Quickshell integration that is bound to replace yad, waybar and swaync. Existing design decisions are outlined in<br>
+Install quickshell ```sudo pacman -S quickshell``` or use ```yay -S quickshell-git```
 [Quickshell Guide](https://github.com/beispielsweise/configs/blob/experimental/hyprdots/core/.config/quickshell/README.md)<br>
 Installed ```Google Sans Flex```, using it for everything
-
-## i3:
-
-i3 base installation required and ```picom polybar```<br>
-[Picom setup hints](https://github.com/beispielsweise/configs/blob/main/archive/config-i3/picom/README.md)<br>
 
 ### For Neovim, check [Nvim setup hints](https://github.com/beispielsweise/configs/blob/main/hyprdots/core/.config/nvim/README.md):
 
