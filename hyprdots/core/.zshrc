@@ -118,7 +118,6 @@ alias zrc="nvim ~/.zshrc"
 alias alcf="nvim ~/.config/alacritty/alacritty.toml"
 
 # Nvim
-alias nvimdir="nvim ~/.config/nvim/"
 alias nv="nvim ."
 export SUDO_EDITOR="nvim"
 alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
@@ -126,15 +125,13 @@ alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
 # Hyprland
 alias hyprdir="cd ~/Configuration-files/hyprdots/core/.config/hypr"
 alias hyprdots="cd ~/Configuration-files/hyprdots"
-alias hyprdirex="cd ~/Configuration-files-experimental/hyprdots/core/.config/hypr"
-alias qsdirex="cd ~/Configuration-files-experimental/hyprdots/core/.config/quickshell/"
+alias nvimdir="nvim ~/Configuration-files/hyprdots/core/.config/nvim/"
+alias qsdir="cd ~/Configuration-files/hyprdots/core/.config/quickshell/"
 
 # Sync notes folder
-alias syncfolder="rclone sync ~/Syncfolder THL_Notizen_GoogleDrive:Syncfolder \
+alias syncfolder="rclone sync ~/Syncfolder GoogleDrive:Syncfolder \
   --filter-from ~/.config/rclone/filters.txt --progress"
 
 
 "$HOME/.config/hypr/scripts/LaunchHyprland.sh"
-
-# [[ -o interactive ]] && cd "$HOME"
 

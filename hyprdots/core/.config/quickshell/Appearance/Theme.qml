@@ -24,12 +24,6 @@ QtObject {
         property color border: "#f9fcf7"
     }
 
-    // Metrics (Hyprland)
-    property QtObject hyprland: QtObject {
-        property int radius: 7
-        property int gapIn: 0
-        property int gapOut: 0
-    }
 
     property QtObject appLauncher: QtObject {
         property bool closeOnFocusLoss: false
@@ -64,6 +58,13 @@ QtObject {
 
     property QtObject defaultLabel: QtObject {
         property int pointSize: 14
+    }
+
+    // Metrics (Hyprland)
+    property QtObject hyprland: QtObject {
+        property int radius: 7
+        property int gapIn: 0
+        property int gapOut: 0
     }
 
     // Function placeholder to apply a parsed theme

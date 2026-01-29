@@ -9,6 +9,10 @@ import Quickshell
  * Exposes GlobalStates toggles to quickshell internals
  */
 Singleton {
+    function toggleBar() {
+        GlobalStates.barVisible = !GlobalStates.barVisible;
+    }
+
     function toggleAppLauncher() {
         GlobalStates.appLauncherVisible = !GlobalStates.appLauncherVisible;
     }

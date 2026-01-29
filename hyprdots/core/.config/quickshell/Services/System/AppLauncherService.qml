@@ -10,6 +10,7 @@ import Quickshell
  * Manages _globalAppsModel/appsModel instances to be used by AppLauncher.qml as models
  */
 QtObject {
+    
     readonly property string scriptPath: Quickshell.env("HOME") + "/.config/quickshell/scripts/IndexApplications.sh"
     readonly property string appsIndexCachePath: Quickshell.env("HOME") + "/.cache/quickshell/apps.json"
 

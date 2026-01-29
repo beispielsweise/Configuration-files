@@ -82,8 +82,9 @@ Contains files that use abovementioned __Modules__ to piece a window, a bar or a
 Launches the app, initializes IPC and Components
 
 # Autocompletion neovim setup:
-1. Mason install ```qmlls```
-2. Add: 
+1. Install ```sudo pacman -S --needed unixodbc```
+2. Mason install ```qmlls```
+3. Add: 
     ```
             ["qmlls"] = function()
                 lspconfig.qmlls.setup({
@@ -99,7 +100,7 @@ Launches the app, initializes IPC and Components
             end,
     ``` 
     to the lspconfig file. (adjust if needed)
-3. Optionally add this block before mason_lspconfig.setup()
+4. Optionally add this block before mason_lspconfig.setup()
 ```
         -- Attempt at supressing [missing-property] qmlls quickshell quirk
         do
@@ -124,5 +125,5 @@ Launches the app, initializes IPC and Components
         end
 ```
     This will supress the annoying [missing-property] false warning, but beware that now you won't know if you have incorrect variables
-3. create .qmlls.ini file if not exists
-4. Autocomplete should work now. Sometimes it refreshes rather funky, a nvim restart may be needed
+5. create .qmlls.ini file if not exists
+6. Autocomplete should work now. Sometimes it refreshes rather funky, a nvim restart may be needed

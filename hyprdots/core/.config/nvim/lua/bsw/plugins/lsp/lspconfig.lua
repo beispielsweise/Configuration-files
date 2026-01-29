@@ -118,11 +118,8 @@ return {
                 if result and result.diagnostics and ctx and ctx.client_id then
                     local client = vim.lsp.get_client_by_id(ctx.client_id)
 
-                    -- Only filter qmlls
                     if client and client.name == "qmlls" then
                         result.diagnostics = vim.tbl_filter(function(diag)
-                            -- This matches qmlls warnings like:
-                            -- Member "paddingV" not found on type "QObject"
                             return not diag.message:match("missing%-property")
                         end, result.diagnostics)
                     end
@@ -163,8 +160,7 @@ return {
                         "-E", "/usr/lib/qt6/qml",
                     },
 
-                    root_dir = util.root_pattern(".qmlls.ini", "shell.qml", ".git"),
-
+                    root_dir = util.root_pattern(".qmlls.ini", ".qmlls", "shell.qml", ".git"),
                     single_file_support = true,
                 })
             end,

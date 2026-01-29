@@ -22,6 +22,6 @@ QtObject {
     }
 
     function logout() {
-        Quickshell.execDetached(["sh", "-c", "hyprctl dispatch exit"]);
+        Quickshell.execDetached(["sh", "-c", "loginctl terminate-user \"$USER\""]);
     }
 }

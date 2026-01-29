@@ -12,7 +12,9 @@ import qs.Windows.Menu
  * Loads Bar{} immediately, other windows load on-demand with Loader
  */
 Scope {
-    Bar {}
+    Bar {
+        visible: GlobalStates.barVisible
+    }
 
     Loader {
         id: appLauncher
